@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetAllLHP">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllLHPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllLHPResult" type="tns:ArrayOfDTLophocphan" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDTLophocphan">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DTLophocphan" nillable="true" type="tns:DTLophocphan" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DTLophocphan">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MaLopHocPhan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaMon" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenMon" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaGiangVien" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenGiangVien" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="HocKy" type="s:unsignedByte" />
+          <s:element minOccurs="0" maxOccurs="1" name="NamHoc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaKhoa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenKhoa" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllKhoa">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllKhoaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllKhoaResult" type="tns:ArrayOfDTKhoa" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDTKhoa">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DTKhoa" nillable="true" type="tns:DTKhoa" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DTKhoa">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MaKhoa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenKhoa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SoDienThoai" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetGiangVienByKHoa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mak" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGiangVienByKHoaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGiangVienByKHoaResult" type="tns:ArrayOfDTGiangvien" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDTGiangvien">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DTGiangvien" nillable="true" type="tns:DTGiangvien" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DTGiangvien">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MaGiangVien" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenGiangVien" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HoDem" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="GioiTinh" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NgaySinh" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="DiaChi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DienThoai" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HocVi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaKhoa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenKhoa" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMonHoc">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMonHocResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMonHocResult" type="tns:ArrayOfDTMonhoc" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDTMonhoc">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DTMonhoc" nillable="true" type="tns:DTMonhoc" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DTMonhoc">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MaMon" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenMon" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SoTinChi" type="s:unsignedByte" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaKhoa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenKhoa" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddLopHP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lop" type="tns:DTLophocphan" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddLopHPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddLopHPResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditLopHP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lop" type="tns:DTLophocphan" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditLopHPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EditLopHPResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteLopHP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lop" type="tns:DTLophocphan" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteLopHPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteLopHPResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAllLHPSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllLHP" />
+  </wsdl:message>
+  <wsdl:message name="GetAllLHPSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllLHPResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllKhoaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllKhoa" />
+  </wsdl:message>
+  <wsdl:message name="GetAllKhoaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllKhoaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGiangVienByKHoaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGiangVienByKHoa" />
+  </wsdl:message>
+  <wsdl:message name="GetGiangVienByKHoaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGiangVienByKHoaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMonHocSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMonHoc" />
+  </wsdl:message>
+  <wsdl:message name="GetMonHocSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMonHocResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddLopHPSoapIn">
+    <wsdl:part name="parameters" element="tns:AddLopHP" />
+  </wsdl:message>
+  <wsdl:message name="AddLopHPSoapOut">
+    <wsdl:part name="parameters" element="tns:AddLopHPResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditLopHPSoapIn">
+    <wsdl:part name="parameters" element="tns:EditLopHP" />
+  </wsdl:message>
+  <wsdl:message name="EditLopHPSoapOut">
+    <wsdl:part name="parameters" element="tns:EditLopHPResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteLopHPSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteLopHP" />
+  </wsdl:message>
+  <wsdl:message name="DeleteLopHPSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteLopHPResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SerLopHPSoap">
+    <wsdl:operation name="GetAllLHP">
+      <wsdl:input message="tns:GetAllLHPSoapIn" />
+      <wsdl:output message="tns:GetAllLHPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllKhoa">
+      <wsdl:input message="tns:GetAllKhoaSoapIn" />
+      <wsdl:output message="tns:GetAllKhoaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGiangVienByKHoa">
+      <wsdl:input message="tns:GetGiangVienByKHoaSoapIn" />
+      <wsdl:output message="tns:GetGiangVienByKHoaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMonHoc">
+      <wsdl:input message="tns:GetMonHocSoapIn" />
+      <wsdl:output message="tns:GetMonHocSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLopHP">
+      <wsdl:input message="tns:AddLopHPSoapIn" />
+      <wsdl:output message="tns:AddLopHPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditLopHP">
+      <wsdl:input message="tns:EditLopHPSoapIn" />
+      <wsdl:output message="tns:EditLopHPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLopHP">
+      <wsdl:input message="tns:DeleteLopHPSoapIn" />
+      <wsdl:output message="tns:DeleteLopHPSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SerLopHPSoap" type="tns:SerLopHPSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllLHP">
+      <soap:operation soapAction="http://tempuri.org/GetAllLHP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllKhoa">
+      <soap:operation soapAction="http://tempuri.org/GetAllKhoa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGiangVienByKHoa">
+      <soap:operation soapAction="http://tempuri.org/GetGiangVienByKHoa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMonHoc">
+      <soap:operation soapAction="http://tempuri.org/GetMonHoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLopHP">
+      <soap:operation soapAction="http://tempuri.org/AddLopHP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditLopHP">
+      <soap:operation soapAction="http://tempuri.org/EditLopHP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLopHP">
+      <soap:operation soapAction="http://tempuri.org/DeleteLopHP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SerLopHPSoap12" type="tns:SerLopHPSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllLHP">
+      <soap12:operation soapAction="http://tempuri.org/GetAllLHP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllKhoa">
+      <soap12:operation soapAction="http://tempuri.org/GetAllKhoa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGiangVienByKHoa">
+      <soap12:operation soapAction="http://tempuri.org/GetGiangVienByKHoa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMonHoc">
+      <soap12:operation soapAction="http://tempuri.org/GetMonHoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLopHP">
+      <soap12:operation soapAction="http://tempuri.org/AddLopHP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditLopHP">
+      <soap12:operation soapAction="http://tempuri.org/EditLopHP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLopHP">
+      <soap12:operation soapAction="http://tempuri.org/DeleteLopHP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SerLopHP">
+    <wsdl:port name="SerLopHPSoap" binding="tns:SerLopHPSoap">
+      <soap:address location="https://localhost:44322/BusinessServices/SerLopHP.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SerLopHPSoap12" binding="tns:SerLopHPSoap12">
+      <soap12:address location="https://localhost:44322/BusinessServices/SerLopHP.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetAllDiem">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllDiemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllDiemResult" type="tns:ArrayOfDTDiem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDTDiem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DTDiem" nillable="true" type="tns:DTDiem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DTDiem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MaLopHocPhan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenLopHocPhan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaSinhVien" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenSinhVien" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DiemChuyenCan" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="DiemGiuaKy" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="DiemThi" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="DiemTrungBinh" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllDiemByGV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mgv" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllDiemByGVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllDiemByGVResult" type="tns:ArrayOfDTDiem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLopHP">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetLopHPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLopHPResult" type="tns:ArrayOfDTLophocphan" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDTLophocphan">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DTLophocphan" nillable="true" type="tns:DTLophocphan" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DTLophocphan">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MaLopHocPhan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaMon" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenMon" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaGiangVien" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenGiangVien" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="HocKy" type="s:unsignedByte" />
+          <s:element minOccurs="0" maxOccurs="1" name="NamHoc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaKhoa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenKhoa" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetSinhViens">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="magv" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSinhViensResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSinhViensResult" type="tns:ArrayOfDTSinhvien" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDTSinhvien">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DTSinhvien" nillable="true" type="tns:DTSinhvien" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DTSinhvien">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MaSinhVien" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenSinhVien" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HoDem" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="GioiTinh" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NgaySinh" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="DiaChi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DienThoai" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaLopHanhChinh" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenLopHanhChinh" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AnhDaiDien" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddDiem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="diem" type="tns:DTDiem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDiemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddDiemResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditDiem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="diem" type="tns:DTDiem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditDiemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EditDiemResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDiem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="diem" type="tns:DTDiem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDiemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteDiemResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAllDiemSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllDiem" />
+  </wsdl:message>
+  <wsdl:message name="GetAllDiemSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllDiemResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllDiemByGVSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllDiemByGV" />
+  </wsdl:message>
+  <wsdl:message name="GetAllDiemByGVSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllDiemByGVResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLopHPSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLopHP" />
+  </wsdl:message>
+  <wsdl:message name="GetLopHPSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLopHPResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSinhViensSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSinhViens" />
+  </wsdl:message>
+  <wsdl:message name="GetSinhViensSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSinhViensResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddDiemSoapIn">
+    <wsdl:part name="parameters" element="tns:AddDiem" />
+  </wsdl:message>
+  <wsdl:message name="AddDiemSoapOut">
+    <wsdl:part name="parameters" element="tns:AddDiemResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditDiemSoapIn">
+    <wsdl:part name="parameters" element="tns:EditDiem" />
+  </wsdl:message>
+  <wsdl:message name="EditDiemSoapOut">
+    <wsdl:part name="parameters" element="tns:EditDiemResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDiemSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteDiem" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDiemSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteDiemResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SerDiemSoap">
+    <wsdl:operation name="GetAllDiem">
+      <wsdl:input message="tns:GetAllDiemSoapIn" />
+      <wsdl:output message="tns:GetAllDiemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDiemByGV">
+      <wsdl:input message="tns:GetAllDiemByGVSoapIn" />
+      <wsdl:output message="tns:GetAllDiemByGVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLopHP">
+      <wsdl:input message="tns:GetLopHPSoapIn" />
+      <wsdl:output message="tns:GetLopHPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSinhViens">
+      <wsdl:input message="tns:GetSinhViensSoapIn" />
+      <wsdl:output message="tns:GetSinhViensSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDiem">
+      <wsdl:input message="tns:AddDiemSoapIn" />
+      <wsdl:output message="tns:AddDiemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditDiem">
+      <wsdl:input message="tns:EditDiemSoapIn" />
+      <wsdl:output message="tns:EditDiemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDiem">
+      <wsdl:input message="tns:DeleteDiemSoapIn" />
+      <wsdl:output message="tns:DeleteDiemSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SerDiemSoap" type="tns:SerDiemSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllDiem">
+      <soap:operation soapAction="http://tempuri.org/GetAllDiem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDiemByGV">
+      <soap:operation soapAction="http://tempuri.org/GetAllDiemByGV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLopHP">
+      <soap:operation soapAction="http://tempuri.org/GetLopHP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSinhViens">
+      <soap:operation soapAction="http://tempuri.org/GetSinhViens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDiem">
+      <soap:operation soapAction="http://tempuri.org/AddDiem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditDiem">
+      <soap:operation soapAction="http://tempuri.org/EditDiem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDiem">
+      <soap:operation soapAction="http://tempuri.org/DeleteDiem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SerDiemSoap12" type="tns:SerDiemSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllDiem">
+      <soap12:operation soapAction="http://tempuri.org/GetAllDiem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDiemByGV">
+      <soap12:operation soapAction="http://tempuri.org/GetAllDiemByGV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLopHP">
+      <soap12:operation soapAction="http://tempuri.org/GetLopHP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSinhViens">
+      <soap12:operation soapAction="http://tempuri.org/GetSinhViens" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDiem">
+      <soap12:operation soapAction="http://tempuri.org/AddDiem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditDiem">
+      <soap12:operation soapAction="http://tempuri.org/EditDiem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDiem">
+      <soap12:operation soapAction="http://tempuri.org/DeleteDiem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SerDiem">
+    <wsdl:port name="SerDiemSoap" binding="tns:SerDiemSoap">
+      <soap:address location="https://localhost:44322/BusinessServices/SerDiem.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SerDiemSoap12" binding="tns:SerDiemSoap12">
+      <soap12:address location="https://localhost:44322/BusinessServices/SerDiem.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

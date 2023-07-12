@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetAllLHC">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllLHCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllLHCResult" type="tns:ArrayOfDTLophanhchinh" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDTLophanhchinh">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DTLophanhchinh" nillable="true" type="tns:DTLophanhchinh" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DTLophanhchinh">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MaLopHanhChinh" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenLopHanhChinh" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaGiangVien" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenGiangVien" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaKhoa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenKhoa" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NamNhapHoc" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetGVCN">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetGVCNResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGVCNResult" type="tns:ArrayOfDTGiangvien" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDTGiangvien">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DTGiangvien" nillable="true" type="tns:DTGiangvien" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DTGiangvien">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MaGiangVien" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenGiangVien" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HoDem" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="GioiTinh" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NgaySinh" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="DiaChi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DienThoai" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HocVi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaKhoa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenKhoa" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddLHC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lop" type="tns:DTLophanhchinh" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddLHCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddLHCResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditLHC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lop" type="tns:DTLophanhchinh" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditLHCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EditLHCResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelteLHC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ma" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelteLHCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DelteLHCResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAllLHCSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllLHC" />
+  </wsdl:message>
+  <wsdl:message name="GetAllLHCSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllLHCResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGVCNSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGVCN" />
+  </wsdl:message>
+  <wsdl:message name="GetGVCNSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGVCNResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddLHCSoapIn">
+    <wsdl:part name="parameters" element="tns:AddLHC" />
+  </wsdl:message>
+  <wsdl:message name="AddLHCSoapOut">
+    <wsdl:part name="parameters" element="tns:AddLHCResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditLHCSoapIn">
+    <wsdl:part name="parameters" element="tns:EditLHC" />
+  </wsdl:message>
+  <wsdl:message name="EditLHCSoapOut">
+    <wsdl:part name="parameters" element="tns:EditLHCResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelteLHCSoapIn">
+    <wsdl:part name="parameters" element="tns:DelteLHC" />
+  </wsdl:message>
+  <wsdl:message name="DelteLHCSoapOut">
+    <wsdl:part name="parameters" element="tns:DelteLHCResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SerLopHCSoap">
+    <wsdl:operation name="GetAllLHC">
+      <wsdl:input message="tns:GetAllLHCSoapIn" />
+      <wsdl:output message="tns:GetAllLHCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGVCN">
+      <wsdl:input message="tns:GetGVCNSoapIn" />
+      <wsdl:output message="tns:GetGVCNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLHC">
+      <wsdl:input message="tns:AddLHCSoapIn" />
+      <wsdl:output message="tns:AddLHCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditLHC">
+      <wsdl:input message="tns:EditLHCSoapIn" />
+      <wsdl:output message="tns:EditLHCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelteLHC">
+      <wsdl:input message="tns:DelteLHCSoapIn" />
+      <wsdl:output message="tns:DelteLHCSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SerLopHCSoap" type="tns:SerLopHCSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllLHC">
+      <soap:operation soapAction="http://tempuri.org/GetAllLHC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGVCN">
+      <soap:operation soapAction="http://tempuri.org/GetGVCN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLHC">
+      <soap:operation soapAction="http://tempuri.org/AddLHC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditLHC">
+      <soap:operation soapAction="http://tempuri.org/EditLHC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelteLHC">
+      <soap:operation soapAction="http://tempuri.org/DelteLHC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SerLopHCSoap12" type="tns:SerLopHCSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllLHC">
+      <soap12:operation soapAction="http://tempuri.org/GetAllLHC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGVCN">
+      <soap12:operation soapAction="http://tempuri.org/GetGVCN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLHC">
+      <soap12:operation soapAction="http://tempuri.org/AddLHC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditLHC">
+      <soap12:operation soapAction="http://tempuri.org/EditLHC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelteLHC">
+      <soap12:operation soapAction="http://tempuri.org/DelteLHC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SerLopHC">
+    <wsdl:port name="SerLopHCSoap" binding="tns:SerLopHCSoap">
+      <soap:address location="https://localhost:44322/BusinessServices/SerLopHC.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SerLopHCSoap12" binding="tns:SerLopHCSoap12">
+      <soap12:address location="https://localhost:44322/BusinessServices/SerLopHC.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

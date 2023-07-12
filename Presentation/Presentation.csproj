@@ -1,0 +1,827 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C6AB067D-FCD0-4B21-A39D-3E545281AF4D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Presentation</RootNamespace>
+    <AssemblyName>Presentation</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\Project\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>CBC50F961CD3921547BBEC0B720985F8AE653C8A</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Presentation_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\SerDiem\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SerGiangvien\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SerKhoa\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SerLopHC\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SerLopHP\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SerMonhoc\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SerSinhvien\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\SerTaikhoan\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReport\QuanLyDiem.cs">
+      <DependentUpon>QuanLyDiem.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReport\QuanLyDiem.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyDiem.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReport\rptDiem.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDiem.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport\rptGiang.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptGiang.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport\rptKhoa.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptKhoa.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport\rptLopHC.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptLopHC.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport\rptLopHP.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptLopHP.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport\rptMon.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptMon.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport\rptSinh.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptSinh.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="fmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmMain.Designer.cs">
+      <DependentUpon>fmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Add\fmAddLopHC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Add\fmAddLopHC.Designer.cs">
+      <DependentUpon>fmAddLopHC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Add\fmAddLopHP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Add\fmAddLopHP.Designer.cs">
+      <DependentUpon>fmAddLopHP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Add\fmAddMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Add\fmAddMon.Designer.cs">
+      <DependentUpon>fmAddMon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Edit\fmEditLopHC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Edit\fmEditLopHC.Designer.cs">
+      <DependentUpon>fmEditLopHC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Edit\fmEditLopHP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Edit\fmEditLopHP.Designer.cs">
+      <DependentUpon>fmEditLopHP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Edit\fmEditMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Edit\fmEditMon.Designer.cs">
+      <DependentUpon>fmEditMon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fmHome.Designer.cs">
+      <DependentUpon>fmHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fmLopHC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fmLopHC.Designer.cs">
+      <DependentUpon>fmLopHC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fmLopHP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fmLopHP.Designer.cs">
+      <DependentUpon>fmLopHP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fmMonhoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fmMonhoc.Designer.cs">
+      <DependentUpon>fmMonhoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Add\fmAddDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Add\fmAddDiem.Designer.cs">
+      <DependentUpon>fmAddDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Add\fmAddGiang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Add\fmAddGiang.Designer.cs">
+      <DependentUpon>fmAddGiang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Add\fmAddSinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Add\fmAddSinh.Designer.cs">
+      <DependentUpon>fmAddSinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Edit\fmEditDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Edit\fmEditDiem.Designer.cs">
+      <DependentUpon>fmEditDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Edit\fmEditGiang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Edit\fmEditGiang.Designer.cs">
+      <DependentUpon>fmEditGiang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Edit\fmEditSinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Edit\fmEditSinh.Designer.cs">
+      <DependentUpon>fmEditSinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fmBangdiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fmBangdiem.Designer.cs">
+      <DependentUpon>fmBangdiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Edit\fmChangePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Edit\fmChangePass.Designer.cs">
+      <DependentUpon>fmChangePass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fmGiangvien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fmGiangvien.Designer.cs">
+      <DependentUpon>fmGiangvien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fmKhoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fmKhoa.Designer.cs">
+      <DependentUpon>fmKhoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fmLogin.Designer.cs">
+      <DependentUpon>fmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReport\fmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrystalReport\fmReport.Designer.cs">
+      <DependentUpon>fmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fmSinhvien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fmSinhvien.Designer.cs">
+      <DependentUpon>fmSinhvien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User.cs" />
+    <EmbeddedResource Include="CrystalReport\rptDiem.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDiem.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport\rptGiang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptGiang.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport\rptKhoa.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptKhoa.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport\rptLopHC.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptLopHC.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport\rptLopHP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptLopHP.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport\rptMon.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptMon.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport\rptSinh.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSinh.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmMain.resx">
+      <DependentUpon>fmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Add\fmAddLopHC.resx">
+      <DependentUpon>fmAddLopHC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Add\fmAddLopHP.resx">
+      <DependentUpon>fmAddLopHP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Add\fmAddMon.resx">
+      <DependentUpon>fmAddMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Edit\fmEditLopHC.resx">
+      <DependentUpon>fmEditLopHC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Edit\fmEditLopHP.resx">
+      <DependentUpon>fmEditLopHP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Edit\fmEditMon.resx">
+      <DependentUpon>fmEditMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fmHome.resx">
+      <DependentUpon>fmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fmLopHC.resx">
+      <DependentUpon>fmLopHC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fmLopHP.resx">
+      <DependentUpon>fmLopHP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fmMonhoc.resx">
+      <DependentUpon>fmMonhoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Add\fmAddDiem.resx">
+      <DependentUpon>fmAddDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Add\fmAddGiang.resx">
+      <DependentUpon>fmAddGiang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Add\fmAddSinh.resx">
+      <DependentUpon>fmAddSinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Edit\fmEditDiem.resx">
+      <DependentUpon>fmEditDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Edit\fmEditGiang.resx">
+      <DependentUpon>fmEditGiang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Edit\fmEditSinh.resx">
+      <DependentUpon>fmEditSinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fmBangdiem.resx">
+      <DependentUpon>fmBangdiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Edit\fmChangePass.resx">
+      <DependentUpon>fmChangePass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fmGiangvien.resx">
+      <DependentUpon>fmGiangvien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fmKhoa.resx">
+      <DependentUpon>fmKhoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fmLogin.resx">
+      <DependentUpon>fmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport\fmReport.resx">
+      <DependentUpon>fmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fmSinhvien.resx">
+      <DependentUpon>fmSinhvien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Connected Services\SerDiem\Presentation.SerDiem.AddDiemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerDiem\Presentation.SerDiem.DeleteDiemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerDiem\Presentation.SerDiem.DTDiem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerDiem\Presentation.SerDiem.DTLophocphan.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerDiem\Presentation.SerDiem.DTSinhvien.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerDiem\Presentation.SerDiem.EditDiemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerDiem\Presentation.SerDiem.GetAllDiemByGVResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerDiem\Presentation.SerDiem.GetAllDiemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerDiem\Presentation.SerDiem.GetLopHPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerDiem\Presentation.SerDiem.GetSinhViensResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerDiem\SerDiem.wsdl" />
+    <None Include="Connected Services\SerGiangvien\Presentation.SerGiangvien.ArrayOfString.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerGiangvien\Presentation.SerGiangvien.DeleteGiangVienResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerGiangvien\Presentation.SerGiangvien.DTGiangvien.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerGiangvien\Presentation.SerGiangvien.DTKhoa.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerGiangvien\Presentation.SerGiangvien.EditGiangVienResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerGiangvien\Presentation.SerGiangvien.GetAllGiangVienResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerGiangvien\Presentation.SerGiangvien.GetHuyenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerGiangvien\Presentation.SerGiangvien.GetKhoaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerGiangvien\Presentation.SerGiangvien.GetTinhResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerGiangvien\Presentation.SerGiangvien.GetXaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerGiangvien\Presentation.SerGiangvien.ThemGiangVienResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerGiangvien\SerGiangvien.wsdl" />
+    <None Include="Connected Services\SerKhoa\Presentation.SerKhoa.AddKhoaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerKhoa\Presentation.SerKhoa.DeleteKhoaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerKhoa\Presentation.SerKhoa.DTKhoa.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerKhoa\Presentation.SerKhoa.EditKhoaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerKhoa\Presentation.SerKhoa.GetAllKhoaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerKhoa\SerKhoa.wsdl" />
+    <None Include="Connected Services\SerLopHC\Presentation.SerLopHC.AddLHCResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerLopHC\Presentation.SerLopHC.DelteLHCResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerLopHC\Presentation.SerLopHC.DTGiangvien.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerLopHC\Presentation.SerLopHC.DTLophanhchinh.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerLopHC\Presentation.SerLopHC.EditLHCResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerLopHC\Presentation.SerLopHC.GetAllLHCResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerLopHC\Presentation.SerLopHC.GetGVCNResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerLopHC\SerLopHC.wsdl" />
+    <None Include="Connected Services\SerLopHP\Presentation.SerLopHP.AddLopHPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerLopHP\Presentation.SerLopHP.DeleteLopHPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerLopHP\Presentation.SerLopHP.DTGiangvien.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerLopHP\Presentation.SerLopHP.DTKhoa.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerLopHP\Presentation.SerLopHP.DTLophocphan.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerLopHP\Presentation.SerLopHP.DTMonhoc.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerLopHP\Presentation.SerLopHP.EditLopHPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerLopHP\Presentation.SerLopHP.GetAllKhoaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerLopHP\Presentation.SerLopHP.GetAllLHPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerLopHP\Presentation.SerLopHP.GetGiangVienByKHoaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerLopHP\Presentation.SerLopHP.GetMonHocResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerLopHP\SerLopHP.wsdl" />
+    <None Include="Connected Services\SerMonhoc\Presentation.SerMonhoc.AddMonHocResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerMonhoc\Presentation.SerMonhoc.DeleteMonHocResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerMonhoc\Presentation.SerMonhoc.DTKhoa.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerMonhoc\Presentation.SerMonhoc.DTMonhoc.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerMonhoc\Presentation.SerMonhoc.GetAllKhoaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerMonhoc\Presentation.SerMonhoc.GetAllMonHocResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerMonhoc\Presentation.SerMonhoc.UpdateMonHocResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerMonhoc\SerMonhoc.wsdl" />
+    <None Include="Connected Services\SerSinhvien\Presentation.SerSinhvien.ArrayOfString.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerSinhvien\Presentation.SerSinhvien.DeleteSinhVienResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerSinhvien\Presentation.SerSinhvien.DTLophanhchinh.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerSinhvien\Presentation.SerSinhvien.DTSinhvien.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerSinhvien\Presentation.SerSinhvien.EditSinhVienResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerSinhvien\Presentation.SerSinhvien.GetAllLopHCResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerSinhvien\Presentation.SerSinhvien.GetAllSinhVienResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerSinhvien\Presentation.SerSinhvien.GetHuyenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerSinhvien\Presentation.SerSinhvien.GetSinhVienLHCResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerSinhvien\Presentation.SerSinhvien.GetTinhThanhResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerSinhvien\Presentation.SerSinhvien.GetXaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerSinhvien\Presentation.SerSinhvien.SearchSinhVienResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerSinhvien\Presentation.SerSinhvien.SortSinhVienResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerSinhvien\Presentation.SerSinhvien.ThemSinhVienResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerSinhvien\SerSinhvien.wsdl" />
+    <None Include="Connected Services\SerTaikhoan\Presentation.SerTaikhoan.ChangePassResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerTaikhoan\Presentation.SerTaikhoan.DTTaikhoan.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerTaikhoan\Presentation.SerTaikhoan.LoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SerTaikhoan\SerTaikhoan.wsdl" />
+    <None Include="CrystalReport\QuanLyDiem.xsc">
+      <DependentUpon>QuanLyDiem.xsd</DependentUpon>
+    </None>
+    <None Include="CrystalReport\QuanLyDiem.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyDiem.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CrystalReport\QuanLyDiem.xss">
+      <DependentUpon>QuanLyDiem.xsd</DependentUpon>
+    </None>
+    <None Include="Presentation_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Avatar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QuanLySinhVien.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\SerDiem\" />
+    <WCFMetadataStorage Include="Connected Services\SerGiangvien\" />
+    <WCFMetadataStorage Include="Connected Services\SerKhoa\" />
+    <WCFMetadataStorage Include="Connected Services\SerLopHC\" />
+    <WCFMetadataStorage Include="Connected Services\SerLopHP\" />
+    <WCFMetadataStorage Include="Connected Services\SerMonhoc\" />
+    <WCFMetadataStorage Include="Connected Services\SerSinhvien\" />
+    <WCFMetadataStorage Include="Connected Services\SerTaikhoan\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SerKhoa\SerKhoa.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SerKhoa\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SerKhoa\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SerKhoa\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SerDiem\SerDiem.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SerDiem\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SerDiem\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SerDiem\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SerTaikhoan\SerTaikhoan.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SerTaikhoan\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SerTaikhoan\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SerTaikhoan\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SerMonhoc\SerMonhoc.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SerMonhoc\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SerMonhoc\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SerMonhoc\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SerGiangvien\SerGiangvien.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SerGiangvien\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SerGiangvien\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SerGiangvien\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SerSinhvien\SerSinhvien.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SerSinhvien\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SerSinhvien\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SerSinhvien\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SerLopHP\SerLopHP.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SerLopHP\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SerLopHP\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SerLopHP\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SerLopHC\SerLopHC.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SerLopHC\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SerLopHC\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\SerLopHC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\holder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

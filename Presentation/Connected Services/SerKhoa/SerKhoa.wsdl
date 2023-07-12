@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetAllKhoa">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllKhoaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllKhoaResult" type="tns:ArrayOfDTKhoa" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDTKhoa">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DTKhoa" nillable="true" type="tns:DTKhoa" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DTKhoa">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MaKhoa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenKhoa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SoDienThoai" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddKhoa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="khoa" type="tns:DTKhoa" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddKhoaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddKhoaResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditKhoa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="khoa" type="tns:DTKhoa" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditKhoaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EditKhoaResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteKhoa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ma" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteKhoaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteKhoaResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAllKhoaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllKhoa" />
+  </wsdl:message>
+  <wsdl:message name="GetAllKhoaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllKhoaResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddKhoaSoapIn">
+    <wsdl:part name="parameters" element="tns:AddKhoa" />
+  </wsdl:message>
+  <wsdl:message name="AddKhoaSoapOut">
+    <wsdl:part name="parameters" element="tns:AddKhoaResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditKhoaSoapIn">
+    <wsdl:part name="parameters" element="tns:EditKhoa" />
+  </wsdl:message>
+  <wsdl:message name="EditKhoaSoapOut">
+    <wsdl:part name="parameters" element="tns:EditKhoaResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteKhoaSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteKhoa" />
+  </wsdl:message>
+  <wsdl:message name="DeleteKhoaSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteKhoaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SerKhoaSoap">
+    <wsdl:operation name="GetAllKhoa">
+      <wsdl:input message="tns:GetAllKhoaSoapIn" />
+      <wsdl:output message="tns:GetAllKhoaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddKhoa">
+      <wsdl:input message="tns:AddKhoaSoapIn" />
+      <wsdl:output message="tns:AddKhoaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditKhoa">
+      <wsdl:input message="tns:EditKhoaSoapIn" />
+      <wsdl:output message="tns:EditKhoaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteKhoa">
+      <wsdl:input message="tns:DeleteKhoaSoapIn" />
+      <wsdl:output message="tns:DeleteKhoaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SerKhoaSoap" type="tns:SerKhoaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllKhoa">
+      <soap:operation soapAction="http://tempuri.org/GetAllKhoa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddKhoa">
+      <soap:operation soapAction="http://tempuri.org/AddKhoa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditKhoa">
+      <soap:operation soapAction="http://tempuri.org/EditKhoa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteKhoa">
+      <soap:operation soapAction="http://tempuri.org/DeleteKhoa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SerKhoaSoap12" type="tns:SerKhoaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllKhoa">
+      <soap12:operation soapAction="http://tempuri.org/GetAllKhoa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddKhoa">
+      <soap12:operation soapAction="http://tempuri.org/AddKhoa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditKhoa">
+      <soap12:operation soapAction="http://tempuri.org/EditKhoa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteKhoa">
+      <soap12:operation soapAction="http://tempuri.org/DeleteKhoa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SerKhoa">
+    <wsdl:port name="SerKhoaSoap" binding="tns:SerKhoaSoap">
+      <soap:address location="https://localhost:44322/BusinessServices/SerKhoa.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SerKhoaSoap12" binding="tns:SerKhoaSoap12">
+      <soap12:address location="https://localhost:44322/BusinessServices/SerKhoa.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

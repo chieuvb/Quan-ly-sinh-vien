@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetAllMonHoc">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllMonHocResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllMonHocResult" type="tns:ArrayOfDTMonhoc" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDTMonhoc">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DTMonhoc" nillable="true" type="tns:DTMonhoc" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DTMonhoc">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MaMon" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenMon" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SoTinChi" type="s:unsignedByte" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaKhoa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenKhoa" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllKhoa">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllKhoaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllKhoaResult" type="tns:ArrayOfDTKhoa" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDTKhoa">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DTKhoa" nillable="true" type="tns:DTKhoa" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DTKhoa">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MaKhoa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenKhoa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SoDienThoai" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddMonHoc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mon" type="tns:DTMonhoc" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMonHocResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddMonHocResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateMonHoc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mon" type="tns:DTMonhoc" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateMonHocResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateMonHocResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteMonHoc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ma" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteMonHocResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteMonHocResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAllMonHocSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllMonHoc" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMonHocSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllMonHocResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllKhoaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllKhoa" />
+  </wsdl:message>
+  <wsdl:message name="GetAllKhoaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllKhoaResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddMonHocSoapIn">
+    <wsdl:part name="parameters" element="tns:AddMonHoc" />
+  </wsdl:message>
+  <wsdl:message name="AddMonHocSoapOut">
+    <wsdl:part name="parameters" element="tns:AddMonHocResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMonHocSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateMonHoc" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMonHocSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateMonHocResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMonHocSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteMonHoc" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMonHocSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteMonHocResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SerMonhocSoap">
+    <wsdl:operation name="GetAllMonHoc">
+      <wsdl:input message="tns:GetAllMonHocSoapIn" />
+      <wsdl:output message="tns:GetAllMonHocSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllKhoa">
+      <wsdl:input message="tns:GetAllKhoaSoapIn" />
+      <wsdl:output message="tns:GetAllKhoaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMonHoc">
+      <wsdl:input message="tns:AddMonHocSoapIn" />
+      <wsdl:output message="tns:AddMonHocSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMonHoc">
+      <wsdl:input message="tns:UpdateMonHocSoapIn" />
+      <wsdl:output message="tns:UpdateMonHocSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMonHoc">
+      <wsdl:input message="tns:DeleteMonHocSoapIn" />
+      <wsdl:output message="tns:DeleteMonHocSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SerMonhocSoap" type="tns:SerMonhocSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllMonHoc">
+      <soap:operation soapAction="http://tempuri.org/GetAllMonHoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllKhoa">
+      <soap:operation soapAction="http://tempuri.org/GetAllKhoa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMonHoc">
+      <soap:operation soapAction="http://tempuri.org/AddMonHoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMonHoc">
+      <soap:operation soapAction="http://tempuri.org/UpdateMonHoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMonHoc">
+      <soap:operation soapAction="http://tempuri.org/DeleteMonHoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SerMonhocSoap12" type="tns:SerMonhocSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllMonHoc">
+      <soap12:operation soapAction="http://tempuri.org/GetAllMonHoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllKhoa">
+      <soap12:operation soapAction="http://tempuri.org/GetAllKhoa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMonHoc">
+      <soap12:operation soapAction="http://tempuri.org/AddMonHoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMonHoc">
+      <soap12:operation soapAction="http://tempuri.org/UpdateMonHoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMonHoc">
+      <soap12:operation soapAction="http://tempuri.org/DeleteMonHoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SerMonhoc">
+    <wsdl:port name="SerMonhocSoap" binding="tns:SerMonhocSoap">
+      <soap:address location="https://localhost:44322/BusinessServices/SerMonhoc.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SerMonhocSoap12" binding="tns:SerMonhocSoap12">
+      <soap12:address location="https://localhost:44322/BusinessServices/SerMonhoc.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

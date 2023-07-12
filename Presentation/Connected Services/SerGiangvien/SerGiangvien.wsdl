@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetAllGiangVien">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllGiangVienResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllGiangVienResult" type="tns:ArrayOfDTGiangvien" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDTGiangvien">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DTGiangvien" nillable="true" type="tns:DTGiangvien" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DTGiangvien">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MaGiangVien" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenGiangVien" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HoDem" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="GioiTinh" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NgaySinh" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="DiaChi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DienThoai" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HocVi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaKhoa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenKhoa" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetKhoa">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetKhoaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetKhoaResult" type="tns:ArrayOfDTKhoa" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDTKhoa">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DTKhoa" nillable="true" type="tns:DTKhoa" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DTKhoa">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MaKhoa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenKhoa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SoDienThoai" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTinh">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTinhResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTinhResult" type="tns:ArrayOfArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetHuyen">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="maT" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHuyenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHuyenResult" type="tns:ArrayOfArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetXa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="maH" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetXaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetXaResult" type="tns:ArrayOfArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ThemGiangVien">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="giangVien" type="tns:DTGiangvien" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ThemGiangVienResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ThemGiangVienResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditGiangVien">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="giangVien" type="tns:DTGiangvien" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EditGiangVienResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EditGiangVienResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteGiangVien">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ma" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteGiangVienResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteGiangVienResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAllGiangVienSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllGiangVien" />
+  </wsdl:message>
+  <wsdl:message name="GetAllGiangVienSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllGiangVienResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetKhoaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetKhoa" />
+  </wsdl:message>
+  <wsdl:message name="GetKhoaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetKhoaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTinhSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTinh" />
+  </wsdl:message>
+  <wsdl:message name="GetTinhSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTinhResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHuyenSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHuyen" />
+  </wsdl:message>
+  <wsdl:message name="GetHuyenSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHuyenResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetXaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetXa" />
+  </wsdl:message>
+  <wsdl:message name="GetXaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetXaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ThemGiangVienSoapIn">
+    <wsdl:part name="parameters" element="tns:ThemGiangVien" />
+  </wsdl:message>
+  <wsdl:message name="ThemGiangVienSoapOut">
+    <wsdl:part name="parameters" element="tns:ThemGiangVienResponse" />
+  </wsdl:message>
+  <wsdl:message name="EditGiangVienSoapIn">
+    <wsdl:part name="parameters" element="tns:EditGiangVien" />
+  </wsdl:message>
+  <wsdl:message name="EditGiangVienSoapOut">
+    <wsdl:part name="parameters" element="tns:EditGiangVienResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteGiangVienSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteGiangVien" />
+  </wsdl:message>
+  <wsdl:message name="DeleteGiangVienSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteGiangVienResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SerGiangvienSoap">
+    <wsdl:operation name="GetAllGiangVien">
+      <wsdl:input message="tns:GetAllGiangVienSoapIn" />
+      <wsdl:output message="tns:GetAllGiangVienSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKhoa">
+      <wsdl:input message="tns:GetKhoaSoapIn" />
+      <wsdl:output message="tns:GetKhoaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTinh">
+      <wsdl:input message="tns:GetTinhSoapIn" />
+      <wsdl:output message="tns:GetTinhSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHuyen">
+      <wsdl:input message="tns:GetHuyenSoapIn" />
+      <wsdl:output message="tns:GetHuyenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetXa">
+      <wsdl:input message="tns:GetXaSoapIn" />
+      <wsdl:output message="tns:GetXaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ThemGiangVien">
+      <wsdl:input message="tns:ThemGiangVienSoapIn" />
+      <wsdl:output message="tns:ThemGiangVienSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EditGiangVien">
+      <wsdl:input message="tns:EditGiangVienSoapIn" />
+      <wsdl:output message="tns:EditGiangVienSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGiangVien">
+      <wsdl:input message="tns:DeleteGiangVienSoapIn" />
+      <wsdl:output message="tns:DeleteGiangVienSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SerGiangvienSoap" type="tns:SerGiangvienSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllGiangVien">
+      <soap:operation soapAction="http://tempuri.org/GetAllGiangVien" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKhoa">
+      <soap:operation soapAction="http://tempuri.org/GetKhoa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTinh">
+      <soap:operation soapAction="http://tempuri.org/GetTinh" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHuyen">
+      <soap:operation soapAction="http://tempuri.org/GetHuyen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXa">
+      <soap:operation soapAction="http://tempuri.org/GetXa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemGiangVien">
+      <soap:operation soapAction="http://tempuri.org/ThemGiangVien" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditGiangVien">
+      <soap:operation soapAction="http://tempuri.org/EditGiangVien" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGiangVien">
+      <soap:operation soapAction="http://tempuri.org/DeleteGiangVien" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SerGiangvienSoap12" type="tns:SerGiangvienSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllGiangVien">
+      <soap12:operation soapAction="http://tempuri.org/GetAllGiangVien" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKhoa">
+      <soap12:operation soapAction="http://tempuri.org/GetKhoa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTinh">
+      <soap12:operation soapAction="http://tempuri.org/GetTinh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHuyen">
+      <soap12:operation soapAction="http://tempuri.org/GetHuyen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXa">
+      <soap12:operation soapAction="http://tempuri.org/GetXa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ThemGiangVien">
+      <soap12:operation soapAction="http://tempuri.org/ThemGiangVien" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditGiangVien">
+      <soap12:operation soapAction="http://tempuri.org/EditGiangVien" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGiangVien">
+      <soap12:operation soapAction="http://tempuri.org/DeleteGiangVien" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SerGiangvien">
+    <wsdl:port name="SerGiangvienSoap" binding="tns:SerGiangvienSoap">
+      <soap:address location="https://localhost:44322/BusinessServices/SerGiangvien.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SerGiangvienSoap12" binding="tns:SerGiangvienSoap12">
+      <soap12:address location="https://localhost:44322/BusinessServices/SerGiangvien.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
