@@ -48,6 +48,12 @@ namespace BussinessServices.BusinessServices
         }
 
         [WebMethod]
+        public byte[] GetAnhSinhVien(string mas)
+        {
+            return daSin.GetAnhSinhVien(mas);
+        }
+
+        [WebMethod]
         public List<string[]> GetTinhThanh()
         {
             return daSin.GetTinhThanh();

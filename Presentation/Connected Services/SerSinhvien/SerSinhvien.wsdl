@@ -102,6 +102,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetAnhSinhVien">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mas" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAnhSinhVienResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAnhSinhVienResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="GetTinhThanh">
         <s:complexType />
       </s:element>
@@ -224,6 +238,12 @@
   <wsdl:message name="SearchSinhVienSoapOut">
     <wsdl:part name="parameters" element="tns:SearchSinhVienResponse" />
   </wsdl:message>
+  <wsdl:message name="GetAnhSinhVienSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAnhSinhVien" />
+  </wsdl:message>
+  <wsdl:message name="GetAnhSinhVienSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAnhSinhVienResponse" />
+  </wsdl:message>
   <wsdl:message name="GetTinhThanhSoapIn">
     <wsdl:part name="parameters" element="tns:GetTinhThanh" />
   </wsdl:message>
@@ -280,6 +300,10 @@
     <wsdl:operation name="SearchSinhVien">
       <wsdl:input message="tns:SearchSinhVienSoapIn" />
       <wsdl:output message="tns:SearchSinhVienSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnhSinhVien">
+      <wsdl:input message="tns:GetAnhSinhVienSoapIn" />
+      <wsdl:output message="tns:GetAnhSinhVienSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetTinhThanh">
       <wsdl:input message="tns:GetTinhThanhSoapIn" />
@@ -346,6 +370,15 @@
     </wsdl:operation>
     <wsdl:operation name="SearchSinhVien">
       <soap:operation soapAction="http://tempuri.org/SearchSinhVien" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnhSinhVien">
+      <soap:operation soapAction="http://tempuri.org/GetAnhSinhVien" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -448,6 +481,15 @@
     </wsdl:operation>
     <wsdl:operation name="SearchSinhVien">
       <soap12:operation soapAction="http://tempuri.org/SearchSinhVien" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnhSinhVien">
+      <soap12:operation soapAction="http://tempuri.org/GetAnhSinhVien" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

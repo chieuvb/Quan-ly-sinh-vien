@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="7e32999b-01c7-4b8c-a44a-0aeb9ef106c6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="e57b6543-d3f1-492b-a50f-34562ccbb4b9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,8 +22,8 @@
     <MetadataSource Address="https://localhost:44322/BusinessServices/SerSinhvien.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SerSinhvien.wsdl" MetadataType="Wsdl" ID="4fc3308d-9b2b-4e7c-8818-359157466a26" SourceId="1" SourceUrl="https://localhost:44322/BusinessServices/SerSinhvien.asmx?wsdl" />
-    <MetadataFile FileName="SerSinhvien.disco" MetadataType="Disco" ID="47663b40-7b2d-4246-b7fd-f5e38f916990" SourceId="1" SourceUrl="https://localhost:44322/BusinessServices/SerSinhvien.asmx?disco" />
+    <MetadataFile FileName="SerSinhvien.wsdl" MetadataType="Wsdl" ID="0141edc4-c0f0-4403-b471-d5bcc257a064" SourceId="1" SourceUrl="https://localhost:44322/BusinessServices/SerSinhvien.asmx?wsdl" />
+    <MetadataFile FileName="SerSinhvien.disco" MetadataType="Disco" ID="4f3f2112-6985-49bc-a04f-41d102082f05" SourceId="1" SourceUrl="https://localhost:44322/BusinessServices/SerSinhvien.asmx?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

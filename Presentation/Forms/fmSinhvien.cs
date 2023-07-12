@@ -5,6 +5,7 @@ using Presentation.SerSinhvien;
 using System;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -33,6 +34,7 @@ namespace Presentation.Forms
 
         private void fmSinhVien_SizeChanged(object sender, EventArgs e)
         {
+            lsvSinhvien.View = View.Details;
             if (Width > 808)
             {
                 lsvSinhvien.Height = 740;
@@ -137,11 +139,33 @@ namespace Presentation.Forms
             lblcrPage.Text = crPage.ToString();
             lblTotal.Text = totalPages.ToString();
 
+            ImageList large = new ImageList
+            {
+                ImageSize = new Size(103, 140)
+            };
+
+            for (int i = 0; i < sinhViens.Length; i++)
+            {
+                if (sinhViens[i].AnhDaiDien != null)
+                {
+                    using (MemoryStream ms = new MemoryStream(sinhViens[i].AnhDaiDien))
+                    {
+                        large.Images.Add(Image.FromStream(ms));
+                    }
+                }
+                else
+                {
+                    large.Images.Add(Properties.Resources.holder);
+                }
+            }
+
+            lsvSinhvien.LargeImageList = large;
+
             for (int i = staInd; i <= endInd; i++)
             {
                 DTSinhvien sin = sinhViens[i];
 
-                ListViewItem lvi = new ListViewItem((i + 1).ToString());
+                ListViewItem lvi = new ListViewItem((i + 1).ToString(), i);
                 lvi.SubItems.Add(sin.MaSinhVien);
                 lvi.SubItems.Add(sin.TenSinhVien);
                 lvi.SubItems.Add(sin.GioiTinh ? "Nam" : "Nữ");
@@ -474,6 +498,20 @@ namespace Presentation.Forms
                 pnlSearch.Visible = true;
                 pnlSort.Visible = false;
             }
+        }
+
+        private void tsmiDetails_Click(object sender, EventArgs e)
+        {
+            lsvSinhvien.View = View.Details;
+            iperPage = Width > 808 ? 32 : 16;
+            DisplayPage(crPage);
+        }
+
+        private void tsmiLarge_Click(object sender, EventArgs e)
+        {
+            lsvSinhvien.View = View.LargeIcon;
+            iperPage = Width > 808 ? 44 : 10;
+            DisplayPage(crPage);
         }
     }
 }

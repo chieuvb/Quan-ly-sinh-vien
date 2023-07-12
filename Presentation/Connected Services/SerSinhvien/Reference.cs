@@ -402,6 +402,13 @@ namespace Presentation.SerSinhvien {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SearchSinhVien", ReplyAction="*")]
         System.Threading.Tasks.Task<Presentation.SerSinhvien.SearchSinhVienResponse> SearchSinhVienAsync(Presentation.SerSinhvien.SearchSinhVienRequest request);
         
+        // CODEGEN: Generating message contract since element name mas from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAnhSinhVien", ReplyAction="*")]
+        Presentation.SerSinhvien.GetAnhSinhVienResponse GetAnhSinhVien(Presentation.SerSinhvien.GetAnhSinhVienRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAnhSinhVien", ReplyAction="*")]
+        System.Threading.Tasks.Task<Presentation.SerSinhvien.GetAnhSinhVienResponse> GetAnhSinhVienAsync(Presentation.SerSinhvien.GetAnhSinhVienRequest request);
+        
         // CODEGEN: Generating message contract since element name GetTinhThanhResult from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetTinhThanh", ReplyAction="*")]
         Presentation.SerSinhvien.GetTinhThanhResponse GetTinhThanh(Presentation.SerSinhvien.GetTinhThanhRequest request);
@@ -776,6 +783,74 @@ namespace Presentation.SerSinhvien {
         
         public SearchSinhVienResponseBody(Presentation.SerSinhvien.DTSinhvien[] SearchSinhVienResult) {
             this.SearchSinhVienResult = SearchSinhVienResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAnhSinhVienRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAnhSinhVien", Namespace="http://tempuri.org/", Order=0)]
+        public Presentation.SerSinhvien.GetAnhSinhVienRequestBody Body;
+        
+        public GetAnhSinhVienRequest() {
+        }
+        
+        public GetAnhSinhVienRequest(Presentation.SerSinhvien.GetAnhSinhVienRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAnhSinhVienRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string mas;
+        
+        public GetAnhSinhVienRequestBody() {
+        }
+        
+        public GetAnhSinhVienRequestBody(string mas) {
+            this.mas = mas;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAnhSinhVienResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAnhSinhVienResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Presentation.SerSinhvien.GetAnhSinhVienResponseBody Body;
+        
+        public GetAnhSinhVienResponse() {
+        }
+        
+        public GetAnhSinhVienResponse(Presentation.SerSinhvien.GetAnhSinhVienResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAnhSinhVienResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public byte[] GetAnhSinhVienResult;
+        
+        public GetAnhSinhVienResponseBody() {
+        }
+        
+        public GetAnhSinhVienResponseBody(byte[] GetAnhSinhVienResult) {
+            this.GetAnhSinhVienResult = GetAnhSinhVienResult;
         }
     }
     
@@ -1330,6 +1405,31 @@ namespace Presentation.SerSinhvien {
             inValue.Body = new Presentation.SerSinhvien.SearchSinhVienRequestBody();
             inValue.Body.sea = sea;
             return ((Presentation.SerSinhvien.SerSinhvienSoap)(this)).SearchSinhVienAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Presentation.SerSinhvien.GetAnhSinhVienResponse Presentation.SerSinhvien.SerSinhvienSoap.GetAnhSinhVien(Presentation.SerSinhvien.GetAnhSinhVienRequest request) {
+            return base.Channel.GetAnhSinhVien(request);
+        }
+        
+        public byte[] GetAnhSinhVien(string mas) {
+            Presentation.SerSinhvien.GetAnhSinhVienRequest inValue = new Presentation.SerSinhvien.GetAnhSinhVienRequest();
+            inValue.Body = new Presentation.SerSinhvien.GetAnhSinhVienRequestBody();
+            inValue.Body.mas = mas;
+            Presentation.SerSinhvien.GetAnhSinhVienResponse retVal = ((Presentation.SerSinhvien.SerSinhvienSoap)(this)).GetAnhSinhVien(inValue);
+            return retVal.Body.GetAnhSinhVienResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Presentation.SerSinhvien.GetAnhSinhVienResponse> Presentation.SerSinhvien.SerSinhvienSoap.GetAnhSinhVienAsync(Presentation.SerSinhvien.GetAnhSinhVienRequest request) {
+            return base.Channel.GetAnhSinhVienAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Presentation.SerSinhvien.GetAnhSinhVienResponse> GetAnhSinhVienAsync(string mas) {
+            Presentation.SerSinhvien.GetAnhSinhVienRequest inValue = new Presentation.SerSinhvien.GetAnhSinhVienRequest();
+            inValue.Body = new Presentation.SerSinhvien.GetAnhSinhVienRequestBody();
+            inValue.Body.mas = mas;
+            return ((Presentation.SerSinhvien.SerSinhvienSoap)(this)).GetAnhSinhVienAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

@@ -23,6 +23,7 @@ namespace Presentation.Forms.Add
         ArrayOfString[] huyenThanh;
         ArrayOfString[] xaThanh;
         string maTinh, maHuyen;
+        readonly Image holder = Properties.Resources.holder;
 
         private void fmAddSinh_Load(object sender, EventArgs e)
         {
@@ -30,7 +31,7 @@ namespace Presentation.Forms.Add
             string newMas = "Mã sinh viên: SV" + newID.ToString();
             tbxMasv.Text = newMas;
 
-            ptbAvatar.Image = Properties.Resources.holder;
+            ptbAvatar.Image = holder;
 
             tbxTen.Text = "-- Họ và tên --";
             tbxTen.ForeColor = Color.DimGray;
@@ -112,13 +113,19 @@ namespace Presentation.Forms.Add
                 string dia = tbxDiachi.Text.Trim() + " - " + cbbXa.Text + " - "
                     + cbbHuyen.Text + " - " + cbbTinh.Text;
 
-                Image img = ptbAvatar.Image;
                 byte[] arrAva;
-
-                using (MemoryStream mem = new MemoryStream())
+                if (ptbAvatar.Image != holder)
                 {
-                    img.Save(mem, ImageFormat.Png);
-                    arrAva = mem.ToArray();
+                    Image img = ptbAvatar.Image;
+                    using (MemoryStream mem = new MemoryStream())
+                    {
+                        img.Save(mem, ImageFormat.Png);
+                        arrAva = mem.ToArray();
+                    }
+                }
+                else
+                {
+                    arrAva = null;
                 }
 
                 DTSinhvien sinhvien = new DTSinhvien

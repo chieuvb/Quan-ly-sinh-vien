@@ -609,6 +609,9 @@
     <None Include="Connected Services\SerSinhvien\Presentation.SerSinhvien.GetAllSinhVienResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\SerSinhvien\Presentation.SerSinhvien.GetAnhSinhVienResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\SerSinhvien\Presentation.SerSinhvien.GetHuyenResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -652,7 +655,6 @@
     <None Include="CrystalReport\QuanLyDiem.xss">
       <DependentUpon>QuanLyDiem.xsd</DependentUpon>
     </None>
-    <None Include="Presentation_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -764,21 +766,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\SerSinhvien\SerSinhvien.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\SerSinhvien\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\SerSinhvien\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\SerSinhvien\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Connected Services\SerLopHP\SerLopHP.disco" />
   </ItemGroup>
   <ItemGroup>
@@ -809,6 +796,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\SerSinhvien\SerSinhvien.disco" />
+    <None Include="Connected Services\SerSinhvien\configuration91.svcinfo" />
+    <None Include="Connected Services\SerSinhvien\configuration.svcinfo" />
+    <None Include="Connected Services\SerSinhvien\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Resources\holder.png" />
   </ItemGroup>
   <ItemGroup>

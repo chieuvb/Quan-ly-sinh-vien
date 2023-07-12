@@ -49,9 +49,14 @@
             this.pnlSearch = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.tbxSearch = new System.Windows.Forms.TextBox();
+            this.mnsView = new System.Windows.Forms.MenuStrip();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDetails = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiLarge = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlPages.SuspendLayout();
             this.pnlSort.SuspendLayout();
             this.pnlSearch.SuspendLayout();
+            this.mnsView.SuspendLayout();
             this.SuspendLayout();
             // 
             // lsvSinhvien
@@ -279,11 +284,50 @@
             this.tbxSearch.TabIndex = 0;
             this.tbxSearch.TextChanged += new System.EventHandler(this.tbxSearch_TextChanged);
             // 
+            // mnsView
+            // 
+            this.mnsView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.mnsView.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.mnsView.Dock = System.Windows.Forms.DockStyle.None;
+            this.mnsView.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewToolStripMenuItem});
+            this.mnsView.Location = new System.Drawing.Point(738, 179);
+            this.mnsView.Name = "mnsView";
+            this.mnsView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.mnsView.Size = new System.Drawing.Size(52, 24);
+            this.mnsView.TabIndex = 18;
+            this.mnsView.Text = "menuStrip1";
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiDetails,
+            this.tsmiLarge});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // tsmiDetails
+            // 
+            this.tsmiDetails.Name = "tsmiDetails";
+            this.tsmiDetails.Size = new System.Drawing.Size(129, 22);
+            this.tsmiDetails.Text = "Details";
+            this.tsmiDetails.Click += new System.EventHandler(this.tsmiDetails_Click);
+            // 
+            // tsmiLarge
+            // 
+            this.tsmiLarge.Name = "tsmiLarge";
+            this.tsmiLarge.Size = new System.Drawing.Size(129, 22);
+            this.tsmiLarge.Text = "Large Icon";
+            this.tsmiLarge.Click += new System.EventHandler(this.tsmiLarge_Click);
+            // 
             // fmSinhvien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(808, 621);
+            this.Controls.Add(this.mnsView);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnSort);
             this.Controls.Add(this.btnPrin);
@@ -306,7 +350,10 @@
             this.pnlSort.PerformLayout();
             this.pnlSearch.ResumeLayout(false);
             this.pnlSearch.PerformLayout();
+            this.mnsView.ResumeLayout(false);
+            this.mnsView.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -333,5 +380,9 @@
         private System.Windows.Forms.Panel pnlSearch;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbxSearch;
+        private System.Windows.Forms.MenuStrip mnsView;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDetails;
+        private System.Windows.Forms.ToolStripMenuItem tsmiLarge;
     }
 }

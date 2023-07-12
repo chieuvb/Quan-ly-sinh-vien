@@ -1,5 +1,4 @@
 ﻿using DataTransfer;
-using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
@@ -30,6 +29,7 @@ namespace DataAccess
                                 Email = reader.GetString(7),
                                 MaLopHanhChinh = reader.GetString(8),
                                 TenLopHanhChinh = reader.GetString(9),
+                                AnhDaiDien = reader.IsDBNull(10) ? null : (byte[])reader[10]
                             });
                         }
                     }
@@ -61,7 +61,8 @@ namespace DataAccess
                                 DienThoai = reader.GetString(6),
                                 Email = reader.GetString(7),
                                 MaLopHanhChinh = reader.GetString(8),
-                                TenLopHanhChinh = reader.GetString(9)
+                                TenLopHanhChinh = reader.GetString(9),
+                                AnhDaiDien = reader.IsDBNull(10) ? null : (byte[])reader[10]
                             });
                         }
                     }
@@ -121,7 +122,8 @@ namespace DataAccess
                                 DienThoai = reader.GetString(6),
                                 Email = reader.GetString(7),
                                 MaLopHanhChinh = reader.GetString(8),
-                                TenLopHanhChinh = reader.GetString(9)
+                                TenLopHanhChinh = reader.GetString(9),
+                                AnhDaiDien = reader.IsDBNull(10) ? null : (byte[])reader[10]
                             });
                         }
                     }
@@ -153,13 +155,37 @@ namespace DataAccess
                                 DienThoai = reader.GetString(6),
                                 Email = reader.GetString(7),
                                 MaLopHanhChinh = reader.GetString(8),
-                                TenLopHanhChinh = reader.GetString(9)
+                                TenLopHanhChinh = reader.GetString(9),
+                                AnhDaiDien = reader.IsDBNull(10) ? null : (byte[])reader[10]
                             });
                         }
                     }
                 }
             }
             return res;
+        }
+
+        public byte[] GetAnhSinhVien(string mas)
+        {
+            using (SqlConnection sqlCon = new SqlConnection(strCon))
+            {
+                sqlCon.Open();
+                using (SqlCommand cmd = new SqlCommand("select anhDaiDien from SinhVien where maSinhVien = @mas", sqlCon))
+                {
+                    cmd.Parameters.AddWithValue("@mas", mas);
+                    using (SqlDataReader rea = cmd.ExecuteReader())
+                    {
+                        if (rea.Read())
+                        {
+                            return rea.IsDBNull(0) ? null : (byte[])rea[0];
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                }
+            }
         }
 
         public List<DTLophanhchinh> GetAllLopHC()
@@ -283,12 +309,18 @@ namespace DataAccess
 
         public bool ThemSinhVien(DTSinhvien sinhVien)
         {
+            string strCommand;
+
+            if (sinhVien.AnhDaiDien != null)
+                strCommand = "insert into SinhVien values (@ma, @ten, @ho, @gioi, @ngay, @dia, @dien, @mai, @lop, @anh)";
+            else
+                strCommand = "insert into SinhVien(maSinhVien, tenSinhVien, hoDem, gioiTinh, ngaySinh, diaChi, dienThoai, email, maLopHaCh)" +
+                    " values (@ma, @ten, @ho, @gioi, @ngay, @dia, @dien, @mai, @lop)";
+
             using (SqlConnection sqlCon = new SqlConnection(strCon))
             {
                 sqlCon.Open();
-                using (SqlCommand command = new SqlCommand(
-                    "insert into SinhVien values (@ma, @ten, @ho, @gioi, @ngay, @dia, @dien, @mai, @lop, @anh)",
-                    sqlCon))
+                using (SqlCommand command = new SqlCommand(strCommand, sqlCon))
                 {
                     command.Parameters.AddWithValue("@ma", sinhVien.MaSinhVien);
                     command.Parameters.AddWithValue("@ten", sinhVien.TenSinhVien);
@@ -299,7 +331,8 @@ namespace DataAccess
                     command.Parameters.AddWithValue("@dien", sinhVien.DienThoai);
                     command.Parameters.AddWithValue("@mai", sinhVien.Email);
                     command.Parameters.AddWithValue("@lop", sinhVien.MaLopHanhChinh);
-                    command.Parameters.AddWithValue("@anh", sinhVien.AnhDaiDien ?? (object)DBNull.Value);
+                    if (sinhVien.AnhDaiDien != null)
+                        command.Parameters.AddWithValue("@anh", sinhVien.AnhDaiDien);
                     return command.ExecuteNonQuery() > 0;
                 }
             }
@@ -307,15 +340,19 @@ namespace DataAccess
 
         public bool EditSinhVien(DTSinhvien sinhVien)
         {
+            string strCommand;
+
+            if (sinhVien.AnhDaiDien != null)
+                strCommand = "update SinhVien set tenSinhVien = @ten, hoDem = @ho, gioiTinh = @gioi, ngaySinh = @ngay, diaChi = @dia, dienThoai = @dien, email = @mai, maLopHaCh = @lop, anhDaiDien = @anh";
+            else
+                strCommand = "update SinhVien set tenSinhVien = @ten, hoDem = @ho, gioiTinh = @gioi, ngaySinh = @ngay, diaChi = @dia, dienThoai = @dien, email = @mai, maLopHaCh = @lop";
+
+            strCommand += " where maSinhVien = @ma";
+
             using (SqlConnection sqlCon = new SqlConnection(strCon))
             {
                 sqlCon.Open();
-                using (SqlCommand command = new SqlCommand(
-                    "update SinhVien " +
-                    "set tenSinhVien = @ten, hoDem = @ho, gioiTinh = @gioi, ngaySinh = @ngay, " +
-                    "diaChi = @dia, dienThoai = @dien, email = @mai, maLopHaCh = @lop , anhDaiDien = @anh" +
-                    " where maSinhVien = @ma",
-                    sqlCon))
+                using (SqlCommand command = new SqlCommand(strCommand, sqlCon))
                 {
                     command.Parameters.AddWithValue("@ma", sinhVien.MaSinhVien);
                     command.Parameters.AddWithValue("@ten", sinhVien.TenSinhVien);
@@ -326,7 +363,8 @@ namespace DataAccess
                     command.Parameters.AddWithValue("@dien", sinhVien.DienThoai);
                     command.Parameters.AddWithValue("@mai", sinhVien.Email);
                     command.Parameters.AddWithValue("@lop", sinhVien.MaLopHanhChinh);
-                    command.Parameters.AddWithValue("@anh", sinhVien.AnhDaiDien ?? (object)DBNull.Value);
+                    if (sinhVien.AnhDaiDien != null)
+                        command.Parameters.AddWithValue("@anh", sinhVien.AnhDaiDien);
                     return command.ExecuteNonQuery() > 0;
                 }
             }

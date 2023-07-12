@@ -125,21 +125,21 @@
             // tsmiChangePass
             // 
             this.tsmiChangePass.Name = "tsmiChangePass";
-            this.tsmiChangePass.Size = new System.Drawing.Size(145, 22);
+            this.tsmiChangePass.Size = new System.Drawing.Size(180, 22);
             this.tsmiChangePass.Text = "Đổi mật khẩu";
             this.tsmiChangePass.Click += new System.EventHandler(this.tsmiChangePass_Click);
             // 
             // tsmiLogout
             // 
             this.tsmiLogout.Name = "tsmiLogout";
-            this.tsmiLogout.Size = new System.Drawing.Size(145, 22);
+            this.tsmiLogout.Size = new System.Drawing.Size(180, 22);
             this.tsmiLogout.Text = "Đăng xuất";
             this.tsmiLogout.Click += new System.EventHandler(this.tsmiLogout_Click);
             // 
             // tsmiExit
             // 
             this.tsmiExit.Name = "tsmiExit";
-            this.tsmiExit.Size = new System.Drawing.Size(145, 22);
+            this.tsmiExit.Size = new System.Drawing.Size(180, 22);
             this.tsmiExit.Text = "Thoát";
             this.tsmiExit.Click += new System.EventHandler(this.tsmiExit_Click);
             // 

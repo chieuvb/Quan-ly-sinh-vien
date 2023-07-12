@@ -30,7 +30,7 @@ namespace Presentation.Forms.Edit
             FirstLoad();
             FillOldData();
 
-            byte[] anh = sinhVien.AnhDaiDien;
+            byte[] anh = client.GetAnhSinhVien(sinhVien.MaSinhVien);
 
             if (anh != null)
             {
@@ -78,13 +78,9 @@ namespace Presentation.Forms.Edit
         void FillOldData()
         {
             if (sinhVien.GioiTinh)
-            {
                 rdbMal.Checked = true;
-            }
             else
-            {
                 rdbFem.Checked = true;
-            }
 
             dtpNgaysinh.Value = sinhVien.NgaySinh;
             string[] diaChi = sinhVien.DiaChi.Split('-');
