@@ -47,6 +47,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnUpload = new System.Windows.Forms.Button();
             this.ptbAvatar = new System.Windows.Forms.PictureBox();
+            this.btnRemove = new System.Windows.Forms.Button();
             this.grbGender.SuspendLayout();
             this.grbAddress.SuspendLayout();
             this.grbContact.SuspendLayout();
@@ -252,9 +253,9 @@
             // btnUpload
             // 
             this.btnUpload.BackColor = System.Drawing.Color.PeachPuff;
-            this.btnUpload.Location = new System.Drawing.Point(32, 353);
+            this.btnUpload.Location = new System.Drawing.Point(138, 353);
             this.btnUpload.Name = "btnUpload";
-            this.btnUpload.Size = new System.Drawing.Size(206, 32);
+            this.btnUpload.Size = new System.Drawing.Size(100, 32);
             this.btnUpload.TabIndex = 17;
             this.btnUpload.Text = "Upload";
             this.btnUpload.UseVisualStyleBackColor = false;
@@ -272,11 +273,23 @@
             this.ptbAvatar.TabStop = false;
             this.ptbAvatar.WaitOnLoad = true;
             // 
+            // btnRemove
+            // 
+            this.btnRemove.BackColor = System.Drawing.Color.Coral;
+            this.btnRemove.Location = new System.Drawing.Point(32, 353);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(100, 32);
+            this.btnRemove.TabIndex = 18;
+            this.btnRemove.Text = "Remove";
+            this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
             // fmAddSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(682, 561);
+            this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.ptbAvatar);
             this.Controls.Add(this.groupBox1);
@@ -327,5 +340,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox ptbAvatar;
         private System.Windows.Forms.Button btnUpload;
+        private System.Windows.Forms.Button btnRemove;
     }
 }

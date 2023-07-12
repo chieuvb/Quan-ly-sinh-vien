@@ -345,7 +345,7 @@ namespace DataAccess
             if (sinhVien.AnhDaiDien != null)
                 strCommand = "update SinhVien set tenSinhVien = @ten, hoDem = @ho, gioiTinh = @gioi, ngaySinh = @ngay, diaChi = @dia, dienThoai = @dien, email = @mai, maLopHaCh = @lop, anhDaiDien = @anh";
             else
-                strCommand = "update SinhVien set tenSinhVien = @ten, hoDem = @ho, gioiTinh = @gioi, ngaySinh = @ngay, diaChi = @dia, dienThoai = @dien, email = @mai, maLopHaCh = @lop";
+                strCommand = "update SinhVien set tenSinhVien = @ten, hoDem = @ho, gioiTinh = @gioi, ngaySinh = @ngay, diaChi = @dia, dienThoai = @dien, email = @mai, maLopHaCh = @lop, anhDaiDien = NULL";
 
             strCommand += " where maSinhVien = @ma";
 

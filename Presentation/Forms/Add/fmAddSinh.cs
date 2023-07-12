@@ -348,6 +348,11 @@ namespace Presentation.Forms.Add
             }
         }
 
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            ptbAvatar.Image = holder;
+        }
+
         private void cbbXa_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbbXa.SelectedIndex > 0)

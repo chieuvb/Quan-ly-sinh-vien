@@ -287,11 +287,11 @@
             // mnsView
             // 
             this.mnsView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.mnsView.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.mnsView.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.mnsView.Dock = System.Windows.Forms.DockStyle.None;
             this.mnsView.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.viewToolStripMenuItem});
-            this.mnsView.Location = new System.Drawing.Point(738, 179);
+            this.mnsView.Location = new System.Drawing.Point(752, 173);
             this.mnsView.Name = "mnsView";
             this.mnsView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.mnsView.Size = new System.Drawing.Size(52, 24);
@@ -300,6 +300,7 @@
             // 
             // viewToolStripMenuItem
             // 
+            this.viewToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiDetails,
             this.tsmiLarge});
@@ -334,8 +335,8 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.pnlPages);
             this.Controls.Add(this.lsvSinhvien);
-            this.Controls.Add(this.pnlSort);
             this.Controls.Add(this.pnlSearch);
+            this.Controls.Add(this.pnlSort);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
