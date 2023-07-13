@@ -29,7 +29,7 @@ namespace DataAccess
                                 Email = reader.GetString(7),
                                 MaLopHanhChinh = reader.GetString(8),
                                 TenLopHanhChinh = reader.GetString(9),
-                                AnhDaiDien = reader.IsDBNull(10) ? null : (byte[])reader[10]
+                                //AnhDaiDien = reader.IsDBNull(10) ? null : (byte[])reader[10]
                             });
                         }
                     }
@@ -62,7 +62,7 @@ namespace DataAccess
                                 Email = reader.GetString(7),
                                 MaLopHanhChinh = reader.GetString(8),
                                 TenLopHanhChinh = reader.GetString(9),
-                                AnhDaiDien = reader.IsDBNull(10) ? null : (byte[])reader[10]
+                                //AnhDaiDien = reader.IsDBNull(10) ? null : (byte[])reader[10]
                             });
                         }
                     }
@@ -123,7 +123,7 @@ namespace DataAccess
                                 Email = reader.GetString(7),
                                 MaLopHanhChinh = reader.GetString(8),
                                 TenLopHanhChinh = reader.GetString(9),
-                                AnhDaiDien = reader.IsDBNull(10) ? null : (byte[])reader[10]
+                                //AnhDaiDien = reader.IsDBNull(10) ? null : (byte[])reader[10]
                             });
                         }
                     }
@@ -156,7 +156,7 @@ namespace DataAccess
                                 Email = reader.GetString(7),
                                 MaLopHanhChinh = reader.GetString(8),
                                 TenLopHanhChinh = reader.GetString(9),
-                                AnhDaiDien = reader.IsDBNull(10) ? null : (byte[])reader[10]
+                                //AnhDaiDien = reader.IsDBNull(10) ? null : (byte[])reader[10]
                             });
                         }
                     }

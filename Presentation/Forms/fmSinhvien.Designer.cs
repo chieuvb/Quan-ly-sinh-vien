@@ -53,6 +53,7 @@
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDetails = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiLarge = new System.Windows.Forms.ToolStripMenuItem();
+            this.pBar = new System.Windows.Forms.ProgressBar();
             this.pnlPages.SuspendLayout();
             this.pnlSort.SuspendLayout();
             this.pnlSearch.SuspendLayout();
@@ -291,7 +292,7 @@
             this.mnsView.Dock = System.Windows.Forms.DockStyle.None;
             this.mnsView.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.viewToolStripMenuItem});
-            this.mnsView.Location = new System.Drawing.Point(752, 173);
+            this.mnsView.Location = new System.Drawing.Point(736, 172);
             this.mnsView.Name = "mnsView";
             this.mnsView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.mnsView.Size = new System.Drawing.Size(52, 24);
@@ -312,22 +313,30 @@
             // tsmiDetails
             // 
             this.tsmiDetails.Name = "tsmiDetails";
-            this.tsmiDetails.Size = new System.Drawing.Size(129, 22);
+            this.tsmiDetails.Size = new System.Drawing.Size(180, 22);
             this.tsmiDetails.Text = "Details";
             this.tsmiDetails.Click += new System.EventHandler(this.tsmiDetails_Click);
             // 
             // tsmiLarge
             // 
             this.tsmiLarge.Name = "tsmiLarge";
-            this.tsmiLarge.Size = new System.Drawing.Size(129, 22);
+            this.tsmiLarge.Size = new System.Drawing.Size(180, 22);
             this.tsmiLarge.Text = "Large Icon";
             this.tsmiLarge.Click += new System.EventHandler(this.tsmiLarge_Click);
+            // 
+            // pBar
+            // 
+            this.pBar.Location = new System.Drawing.Point(276, 256);
+            this.pBar.Name = "pBar";
+            this.pBar.Size = new System.Drawing.Size(256, 16);
+            this.pBar.TabIndex = 19;
             // 
             // fmSinhvien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(808, 621);
+            this.Controls.Add(this.pBar);
             this.Controls.Add(this.mnsView);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnSort);
@@ -385,5 +394,6 @@
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmiDetails;
         private System.Windows.Forms.ToolStripMenuItem tsmiLarge;
+        private System.Windows.Forms.ProgressBar pBar;
     }
 }

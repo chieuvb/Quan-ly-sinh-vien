@@ -22,6 +22,10 @@ namespace Presentation.Forms
         DTSinhvien[] sinhViens;
         int iperPage = 16;
         int crPage = 1;
+        readonly ImageList large = new ImageList
+        {
+            ImageSize = new Size(103, 140)
+        };
 
         private void fmSinhVien_Load(object sender, EventArgs e)
         {
@@ -30,6 +34,9 @@ namespace Presentation.Forms
             LoadData();
             pnlSort.Visible = false;
             pnlSearch.Visible = false;
+
+            lsvSinhvien.LargeImageList = large;
+            pBar.Visible = false;
         }
 
         private void fmSinhVien_SizeChanged(object sender, EventArgs e)
@@ -47,6 +54,8 @@ namespace Presentation.Forms
                 lsvSinhvien.Columns["tenl"].Width = 200;
                 iperPage = 32;
                 pnlPages.Location = new Point(726, 168);
+                pBar.Size = new Size(480, 32);
+                pBar.Location = new Point(570, 480);
             }
             else
             {
@@ -60,6 +69,8 @@ namespace Presentation.Forms
                 lsvSinhvien.Columns["tenl"].Width = 0;
                 iperPage = 16;
                 pnlPages.Location = new Point(320, 162);
+                pBar.Size = new Size(256, 16);
+                pBar.Location = new Point(276, 276);
             }
             DisplayPage(crPage);
         }
@@ -139,7 +150,7 @@ namespace Presentation.Forms
             lblcrPage.Text = crPage.ToString();
             lblTotal.Text = totalPages.ToString();
 
-            ImageList large = new ImageList
+            /*ImageList large = new ImageList
             {
                 ImageSize = new Size(103, 140)
             };
@@ -159,7 +170,7 @@ namespace Presentation.Forms
                 }
             }
 
-            lsvSinhvien.LargeImageList = large;
+            lsvSinhvien.LargeImageList = large;*/
 
             for (int i = staInd; i <= endInd; i++)
             {
@@ -433,7 +444,10 @@ namespace Presentation.Forms
                 string msv = sin.Max(s => s.MaSinhVien);
 
                 if (new fmAddSinh(msv).ShowDialog() == DialogResult.OK)
+                {
                     LoadData();
+                    LoadAnh();
+                }
             }
             else
                 MessageBox.Show("Yêu cầu bị từ chối!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -456,13 +470,19 @@ namespace Presentation.Forms
                 MaLopHanhChinh = item.SubItems[8].Text,
                 TenLopHanhChinh = item.SubItems[9].Text,
             };
-            if (User.Role == 0)
-                MessageBox.Show(sinhVien.MaSinhVien + " | " + sinhVien.HoDem + " " + sinhVien.TenSinhVien + " | " + sinhVien.NgaySinh.ToString("dd-MM-yyyy") + " | " + sinhVien.TenLopHanhChinh,
-                    "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else
+
+            if (User.Role == 1)
             {
                 if (new fmEditSinh(sinhVien).ShowDialog() == DialogResult.OK)
+                {
                     LoadData();
+                    LoadAnh();
+                }
+            }
+            else
+            {
+                MessageBox.Show(sinhVien.MaSinhVien + " | " + sinhVien.HoDem + " " + sinhVien.TenSinhVien + " | " + sinhVien.NgaySinh.ToString("dd-MM-yyyy") + " | " + sinhVien.TenLopHanhChinh,
+                    "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -504,14 +524,47 @@ namespace Presentation.Forms
         {
             lsvSinhvien.View = View.Details;
             iperPage = Width > 808 ? 32 : 16;
+            crPage = 1;
             DisplayPage(crPage);
+        }
+
+        void LoadAnh()
+        {
+            large.Images.Clear();
+            pBar.Value = 0;
+            pBar.Visible = true;
+
+            for (int i = 0; i < sinhViens.Length; i++)
+            {
+                if (client.GetAnhSinhVien(sinhViens[i].MaSinhVien) != null)
+                {
+                    using (MemoryStream ms = new MemoryStream(client.GetAnhSinhVien(sinhViens[i].MaSinhVien)))
+                    {
+                        large.Images.Add(Image.FromStream(ms));
+                    }
+                }
+                else
+                {
+                    large.Images.Add(Properties.Resources.holder);
+                }
+
+                pBar.PerformStep();
+            }
+
+            pBar.Visible = false;
         }
 
         private void tsmiLarge_Click(object sender, EventArgs e)
         {
             lsvSinhvien.View = View.LargeIcon;
             iperPage = Width > 808 ? 44 : 10;
+            crPage = 1;
             DisplayPage(crPage);
+
+            if (large.Images.Count < sinhViens.Length)
+            {
+                LoadAnh();
+            }
         }
     }
 }
