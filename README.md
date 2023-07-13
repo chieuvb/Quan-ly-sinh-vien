@@ -5,10 +5,10 @@
 
 ## Công ngệ sử dụng
 Giao diện:
-  * C# Windows Forms
+  * Windows Forms (.NET Framework)
 
 Logic, truyền dữ liệu:
-  * ASP.NET Web Services
+  * ASP.NET Web Application (.NET Framework)
 
 Database:
   * Microsoft SQL Server
