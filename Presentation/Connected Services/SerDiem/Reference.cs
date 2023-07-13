@@ -553,6 +553,13 @@ namespace Presentation.SerDiem {
         System.Threading.Tasks.Task<Presentation.SerDiem.GetAllDiemResponse> GetAllDiemAsync(Presentation.SerDiem.GetAllDiemRequest request);
         
         // CODEGEN: Generating message contract since element name mal from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllDiemByLHP", ReplyAction="*")]
+        Presentation.SerDiem.GetAllDiemByLHPResponse GetAllDiemByLHP(Presentation.SerDiem.GetAllDiemByLHPRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllDiemByLHP", ReplyAction="*")]
+        System.Threading.Tasks.Task<Presentation.SerDiem.GetAllDiemByLHPResponse> GetAllDiemByLHPAsync(Presentation.SerDiem.GetAllDiemByLHPRequest request);
+        
+        // CODEGEN: Generating message contract since element name mag from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllDiemByGV", ReplyAction="*")]
         Presentation.SerDiem.GetAllDiemByGVResponse GetAllDiemByGV(Presentation.SerDiem.GetAllDiemByGVRequest request);
         
@@ -660,6 +667,74 @@ namespace Presentation.SerDiem {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllDiemByLHPRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllDiemByLHP", Namespace="http://tempuri.org/", Order=0)]
+        public Presentation.SerDiem.GetAllDiemByLHPRequestBody Body;
+        
+        public GetAllDiemByLHPRequest() {
+        }
+        
+        public GetAllDiemByLHPRequest(Presentation.SerDiem.GetAllDiemByLHPRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAllDiemByLHPRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string mal;
+        
+        public GetAllDiemByLHPRequestBody() {
+        }
+        
+        public GetAllDiemByLHPRequestBody(string mal) {
+            this.mal = mal;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllDiemByLHPResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllDiemByLHPResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Presentation.SerDiem.GetAllDiemByLHPResponseBody Body;
+        
+        public GetAllDiemByLHPResponse() {
+        }
+        
+        public GetAllDiemByLHPResponse(Presentation.SerDiem.GetAllDiemByLHPResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAllDiemByLHPResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Presentation.SerDiem.DTDiem[] GetAllDiemByLHPResult;
+        
+        public GetAllDiemByLHPResponseBody() {
+        }
+        
+        public GetAllDiemByLHPResponseBody(Presentation.SerDiem.DTDiem[] GetAllDiemByLHPResult) {
+            this.GetAllDiemByLHPResult = GetAllDiemByLHPResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetAllDiemByGVRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllDiemByGV", Namespace="http://tempuri.org/", Order=0)]
@@ -680,13 +755,13 @@ namespace Presentation.SerDiem {
     public partial class GetAllDiemByGVRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string mal;
+        public string mag;
         
         public GetAllDiemByGVRequestBody() {
         }
         
-        public GetAllDiemByGVRequestBody(string mal) {
-            this.mal = mal;
+        public GetAllDiemByGVRequestBody(string mag) {
+            this.mag = mag;
         }
     }
     
@@ -1108,14 +1183,39 @@ namespace Presentation.SerDiem {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Presentation.SerDiem.GetAllDiemByLHPResponse Presentation.SerDiem.SerDiemSoap.GetAllDiemByLHP(Presentation.SerDiem.GetAllDiemByLHPRequest request) {
+            return base.Channel.GetAllDiemByLHP(request);
+        }
+        
+        public Presentation.SerDiem.DTDiem[] GetAllDiemByLHP(string mal) {
+            Presentation.SerDiem.GetAllDiemByLHPRequest inValue = new Presentation.SerDiem.GetAllDiemByLHPRequest();
+            inValue.Body = new Presentation.SerDiem.GetAllDiemByLHPRequestBody();
+            inValue.Body.mal = mal;
+            Presentation.SerDiem.GetAllDiemByLHPResponse retVal = ((Presentation.SerDiem.SerDiemSoap)(this)).GetAllDiemByLHP(inValue);
+            return retVal.Body.GetAllDiemByLHPResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Presentation.SerDiem.GetAllDiemByLHPResponse> Presentation.SerDiem.SerDiemSoap.GetAllDiemByLHPAsync(Presentation.SerDiem.GetAllDiemByLHPRequest request) {
+            return base.Channel.GetAllDiemByLHPAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Presentation.SerDiem.GetAllDiemByLHPResponse> GetAllDiemByLHPAsync(string mal) {
+            Presentation.SerDiem.GetAllDiemByLHPRequest inValue = new Presentation.SerDiem.GetAllDiemByLHPRequest();
+            inValue.Body = new Presentation.SerDiem.GetAllDiemByLHPRequestBody();
+            inValue.Body.mal = mal;
+            return ((Presentation.SerDiem.SerDiemSoap)(this)).GetAllDiemByLHPAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Presentation.SerDiem.GetAllDiemByGVResponse Presentation.SerDiem.SerDiemSoap.GetAllDiemByGV(Presentation.SerDiem.GetAllDiemByGVRequest request) {
             return base.Channel.GetAllDiemByGV(request);
         }
         
-        public Presentation.SerDiem.DTDiem[] GetAllDiemByGV(string mal) {
+        public Presentation.SerDiem.DTDiem[] GetAllDiemByGV(string mag) {
             Presentation.SerDiem.GetAllDiemByGVRequest inValue = new Presentation.SerDiem.GetAllDiemByGVRequest();
             inValue.Body = new Presentation.SerDiem.GetAllDiemByGVRequestBody();
-            inValue.Body.mal = mal;
+            inValue.Body.mag = mag;
             Presentation.SerDiem.GetAllDiemByGVResponse retVal = ((Presentation.SerDiem.SerDiemSoap)(this)).GetAllDiemByGV(inValue);
             return retVal.Body.GetAllDiemByGVResult;
         }
@@ -1125,10 +1225,10 @@ namespace Presentation.SerDiem {
             return base.Channel.GetAllDiemByGVAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Presentation.SerDiem.GetAllDiemByGVResponse> GetAllDiemByGVAsync(string mal) {
+        public System.Threading.Tasks.Task<Presentation.SerDiem.GetAllDiemByGVResponse> GetAllDiemByGVAsync(string mag) {
             Presentation.SerDiem.GetAllDiemByGVRequest inValue = new Presentation.SerDiem.GetAllDiemByGVRequest();
             inValue.Body = new Presentation.SerDiem.GetAllDiemByGVRequestBody();
-            inValue.Body.mal = mal;
+            inValue.Body.mag = mag;
             return ((Presentation.SerDiem.SerDiemSoap)(this)).GetAllDiemByGVAsync(inValue);
         }
         

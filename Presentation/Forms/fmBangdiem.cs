@@ -3,7 +3,6 @@ using Presentation.Forms.Add;
 using Presentation.Forms.Edit;
 using Presentation.SerDiem;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
@@ -27,26 +26,6 @@ namespace Presentation.Forms
             AddColumn();
             LoadData();
             DisplayPage(crPage);
-        }
-
-        private List<DTDiem> ToListD(DTDiem[] die)
-        {
-            var res = new List<DTDiem>();
-            for (int i = 0; i < die.Length; i++)
-            {
-                res.Add(die[i]);
-            }
-            return res;
-        }
-
-        private List<DTLophocphan> ToListP(DTLophocphan[] hp)
-        {
-            var res = new List<DTLophocphan>();
-            for (int i = 0; i < hp.Length; i++)
-            {
-                res.Add(hp[i]);
-            }
-            return res;
         }
 
         private void fmBangDiem_SizeChanged(object sender, EventArgs e)
@@ -103,18 +82,16 @@ namespace Presentation.Forms
             cbbLocmon.Items.Add("-- Tất cả --");
             if (User.Role == 0)
             {
-                diems = client.GetAllDiemByGV(User.Username);
-                foreach (var lop in client.GetLopHP())
+                DTLophocphan[] lhp = client.GetLopHP();
+                for (int i = 0; i < lhp.Length; i++)
                 {
-                    if (User.Username == lop.MaGiangVien)
+                    if (User.Username == lhp[i].MaGiangVien)
                     {
-                        cbbLocmon.Items.Add(lop.MaLopHocPhan + " | " + lop.TenMon + " | " + lop.TenGiangVien); 
+                        cbbLocmon.Items.Add(lhp[i].MaLopHocPhan + " | " + lhp[i].TenMon + " | " + lhp[i].TenGiangVien);
                     }
                 }
-                if (cbbLocmon.Items.Count > 1)
-                {
-                    cbbLocmon.SelectedIndex = 1;
-                }
+
+                cbbLocmon.SelectedIndex = 0;
             }
             else
             {
@@ -250,30 +227,31 @@ namespace Presentation.Forms
 
         private void cbbLocmon_SelectedIndexChanged(object sender, EventArgs e)
         {
-            diems = null;
-            if (true)
+            if (User.Role == 1)
             {
                 if (cbbLocmon.SelectedIndex > 0)
                 {
-                    string selectedMalop = cbbLocmon.Text.Split('|')[0].Trim();
-                    string maGV = "";
-                    foreach (var lop in client.GetLopHP())
-                    {
-                        if (selectedMalop == lop.MaLopHocPhan)
-                        {
-                            maGV = lop.MaGiangVien; 
-                            break;
-                        }
-                    }
-                    diems = client.GetAllDiemByGV(maGV);
-                    DisplayPage(crPage);
+                    string mal = cbbLocmon.Text.Split('|')[0].Trim();
+                    diems = client.GetAllDiemByLHP(mal);
                 }
                 else
                 {
                     diems = client.GetAllDiem();
-                    DisplayPage(crPage);
                 }
             }
+            else if (User.Role == 0)
+            {
+                if (cbbLocmon.SelectedIndex > 0)
+                {
+                    string mal = cbbLocmon.Text.Split('|')[0].Trim();
+                    diems = client.GetAllDiemByLHP(mal);
+                }
+                else
+                {
+                    diems = client.GetAllDiemByGV(User.Username);
+                }
+            }
+            DisplayPage(crPage);
         }
     }
 }

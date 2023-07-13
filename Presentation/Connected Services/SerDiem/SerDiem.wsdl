@@ -29,10 +29,24 @@
           <s:element minOccurs="1" maxOccurs="1" name="DiemTrungBinh" type="s:double" />
         </s:sequence>
       </s:complexType>
-      <s:element name="GetAllDiemByGV">
+      <s:element name="GetAllDiemByLHP">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="mal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllDiemByLHPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllDiemByLHPResult" type="tns:ArrayOfDTDiem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllDiemByGV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mag" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -155,6 +169,12 @@
   <wsdl:message name="GetAllDiemSoapOut">
     <wsdl:part name="parameters" element="tns:GetAllDiemResponse" />
   </wsdl:message>
+  <wsdl:message name="GetAllDiemByLHPSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllDiemByLHP" />
+  </wsdl:message>
+  <wsdl:message name="GetAllDiemByLHPSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllDiemByLHPResponse" />
+  </wsdl:message>
   <wsdl:message name="GetAllDiemByGVSoapIn">
     <wsdl:part name="parameters" element="tns:GetAllDiemByGV" />
   </wsdl:message>
@@ -196,6 +216,10 @@
       <wsdl:input message="tns:GetAllDiemSoapIn" />
       <wsdl:output message="tns:GetAllDiemSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetAllDiemByLHP">
+      <wsdl:input message="tns:GetAllDiemByLHPSoapIn" />
+      <wsdl:output message="tns:GetAllDiemByLHPSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="GetAllDiemByGV">
       <wsdl:input message="tns:GetAllDiemByGVSoapIn" />
       <wsdl:output message="tns:GetAllDiemByGVSoapOut" />
@@ -225,6 +249,15 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetAllDiem">
       <soap:operation soapAction="http://tempuri.org/GetAllDiem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDiemByLHP">
+      <soap:operation soapAction="http://tempuri.org/GetAllDiemByLHP" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -291,6 +324,15 @@
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetAllDiem">
       <soap12:operation soapAction="http://tempuri.org/GetAllDiem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDiemByLHP">
+      <soap12:operation soapAction="http://tempuri.org/GetAllDiemByLHP" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

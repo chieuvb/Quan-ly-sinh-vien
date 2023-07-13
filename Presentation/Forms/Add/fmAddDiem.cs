@@ -83,7 +83,7 @@ namespace Presentation.Forms.Add
                 {
                     if (User.Username == lop.MaGiangVien)
                     {
-                        cbbLopHP.Items.Add(lop.MaLopHocPhan + " | " + lop.TenMon + " | " + lop.TenGiangVien); 
+                        cbbLopHP.Items.Add(lop.MaLopHocPhan + " | " + lop.TenMon + " | " + lop.TenGiangVien);
                         break;
                     }
                 }

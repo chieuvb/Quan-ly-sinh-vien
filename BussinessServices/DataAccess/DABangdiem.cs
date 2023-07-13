@@ -42,9 +42,48 @@ namespace DataAccess
             using (SqlConnection sqlCon = new SqlConnection(strCon))
             {
                 sqlCon.Open();
-                using (SqlCommand command = new SqlCommand("spGetDiemByLHP @mal", sqlCon))
+                using (SqlCommand command = new SqlCommand("select BangDiem.maLopHP, tenMon, BangDiem.maSinhVien, hoDem, tenSinhVien, diemChuyenCan, diemGiuaKy, diemThi, diemTrungBinh from BangDiem" +
+                    " join LopHocPhan on BangDiem.maLopHP = LopHocPhan.maLopHP" +
+                    " join MonHoc on LopHocPhan.maMon = MonHoc.maMon" +
+                    " join SinhVien on BangDiem.maSinhVien = SinhVien.maSinhVien" +
+                    " where BangDiem.maLopHP = @mal", sqlCon))
                 {
                     command.Parameters.AddWithValue("@mal", mal);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            lisRes.Add(new DTDiem
+                            {
+                                MaLopHocPhan = reader.GetString(0),
+                                TenLopHocPhan = reader.GetString(1),
+                                MaSinhVien = reader.GetString(2),
+                                TenSinhVien = reader.GetString(3) + " " + reader.GetString(4),
+                                DiemChuyenCan = reader.GetDouble(5),
+                                DiemGiuaKy = reader.GetDouble(6),
+                                DiemThi = reader.GetDouble(7),
+                                DiemTrungBinh = reader.GetDouble(8)
+                            });
+                        }
+                    }
+                }
+            }
+            return lisRes;
+        }
+
+        public List<DTDiem> GetAllDiemByGV(string mag)
+        {
+            List<DTDiem> lisRes = new List<DTDiem>();
+            using (SqlConnection sqlCon = new SqlConnection(strCon))
+            {
+                sqlCon.Open();
+                using (SqlCommand command = new SqlCommand("select BangDiem.maLopHP, tenMon, BangDiem.maSinhVien, hoDem, tenSinhVien, diemChuyenCan, diemGiuaKy, diemThi, diemTrungBinh from BangDiem" +
+                    " join LopHocPhan on BangDiem.maLopHP = LopHocPhan.maLopHP" +
+                    " join MonHoc on LopHocPhan.maMon = MonHoc.maMon" +
+                    " join SinhVien on BangDiem.maSinhVien = SinhVien.maSinhVien" +
+                    " where maGiangVien = @mag", sqlCon))
+                {
+                    command.Parameters.AddWithValue("@mag", mag);
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())

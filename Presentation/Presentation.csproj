@@ -450,6 +450,9 @@
     <None Include="Connected Services\SerDiem\Presentation.SerDiem.GetAllDiemByGVResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\SerDiem\Presentation.SerDiem.GetAllDiemByLHPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\SerDiem\Presentation.SerDiem.GetAllDiemResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
