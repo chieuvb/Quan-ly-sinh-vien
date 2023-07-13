@@ -114,7 +114,7 @@ namespace Presentation.Forms.Add
             {
                 throw new Exception("Mã khoa không hợp lệ!");
             }
-            else if (lop.NamNhapHoc >= DateTime.Now.Year)
+            else if (lop.NamNhapHoc > DateTime.Now.Year)
             {
                 throw new Exception("Năm nhập học không hợp lệ!");
             }
