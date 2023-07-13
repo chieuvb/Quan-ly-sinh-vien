@@ -24,9 +24,9 @@ namespace BussinessServices.BusinessServices
         }
 
         [WebMethod]
-        public List<DTDiem> GetAllDiemByGV(string mgv)
+        public List<DTDiem> GetAllDiemByGV(string mal)
         {
-            return daDie.GetAllDiemByGV(mgv);
+            return daDie.GetAllDiemByLHP(mal);
         }
 
         [WebMethod]

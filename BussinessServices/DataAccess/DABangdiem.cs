@@ -36,15 +36,15 @@ namespace DataAccess
             return lisRes;
         }
 
-        public List<DTDiem> GetAllDiemByGV(string mgv)
+        public List<DTDiem> GetAllDiemByLHP(string mal)
         {
             List<DTDiem> lisRes = new List<DTDiem>();
             using (SqlConnection sqlCon = new SqlConnection(strCon))
             {
                 sqlCon.Open();
-                using (SqlCommand command = new SqlCommand("spGetDiemByGV @mgv", sqlCon))
+                using (SqlCommand command = new SqlCommand("spGetDiemByLHP @mal", sqlCon))
                 {
-                    command.Parameters.AddWithValue("@mgv", mgv);
+                    command.Parameters.AddWithValue("@mal", mal);
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())

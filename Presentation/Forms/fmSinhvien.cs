@@ -498,7 +498,9 @@ namespace Presentation.Forms
 
         private void btnSort_Click(object sender, EventArgs e)
         {
-            cbbLopHC.SelectedIndex = 0;
+            if (User.Role == 1)
+                cbbLopHC.SelectedIndex = 0;
+
             if (pnlSort.Visible)
                 pnlSort.Visible = false;
             else

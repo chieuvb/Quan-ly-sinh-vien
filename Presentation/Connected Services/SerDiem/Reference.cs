@@ -552,7 +552,7 @@ namespace Presentation.SerDiem {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllDiem", ReplyAction="*")]
         System.Threading.Tasks.Task<Presentation.SerDiem.GetAllDiemResponse> GetAllDiemAsync(Presentation.SerDiem.GetAllDiemRequest request);
         
-        // CODEGEN: Generating message contract since element name mgv from namespace http://tempuri.org/ is not marked nillable
+        // CODEGEN: Generating message contract since element name mal from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllDiemByGV", ReplyAction="*")]
         Presentation.SerDiem.GetAllDiemByGVResponse GetAllDiemByGV(Presentation.SerDiem.GetAllDiemByGVRequest request);
         
@@ -680,13 +680,13 @@ namespace Presentation.SerDiem {
     public partial class GetAllDiemByGVRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string mgv;
+        public string mal;
         
         public GetAllDiemByGVRequestBody() {
         }
         
-        public GetAllDiemByGVRequestBody(string mgv) {
-            this.mgv = mgv;
+        public GetAllDiemByGVRequestBody(string mal) {
+            this.mal = mal;
         }
     }
     
@@ -1112,10 +1112,10 @@ namespace Presentation.SerDiem {
             return base.Channel.GetAllDiemByGV(request);
         }
         
-        public Presentation.SerDiem.DTDiem[] GetAllDiemByGV(string mgv) {
+        public Presentation.SerDiem.DTDiem[] GetAllDiemByGV(string mal) {
             Presentation.SerDiem.GetAllDiemByGVRequest inValue = new Presentation.SerDiem.GetAllDiemByGVRequest();
             inValue.Body = new Presentation.SerDiem.GetAllDiemByGVRequestBody();
-            inValue.Body.mgv = mgv;
+            inValue.Body.mal = mal;
             Presentation.SerDiem.GetAllDiemByGVResponse retVal = ((Presentation.SerDiem.SerDiemSoap)(this)).GetAllDiemByGV(inValue);
             return retVal.Body.GetAllDiemByGVResult;
         }
@@ -1125,10 +1125,10 @@ namespace Presentation.SerDiem {
             return base.Channel.GetAllDiemByGVAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Presentation.SerDiem.GetAllDiemByGVResponse> GetAllDiemByGVAsync(string mgv) {
+        public System.Threading.Tasks.Task<Presentation.SerDiem.GetAllDiemByGVResponse> GetAllDiemByGVAsync(string mal) {
             Presentation.SerDiem.GetAllDiemByGVRequest inValue = new Presentation.SerDiem.GetAllDiemByGVRequest();
             inValue.Body = new Presentation.SerDiem.GetAllDiemByGVRequestBody();
-            inValue.Body.mgv = mgv;
+            inValue.Body.mal = mal;
             return ((Presentation.SerDiem.SerDiemSoap)(this)).GetAllDiemByGVAsync(inValue);
         }
         

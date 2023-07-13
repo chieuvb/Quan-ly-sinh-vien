@@ -18,7 +18,7 @@ namespace Presentation.Forms
         }
 
         readonly SerDiemSoapClient client = new SerDiemSoapClient();
-        List<DTDiem> diems;
+        DTDiem[] diems;
         int iperPage = 16;
         int crPage = 1;
 
@@ -103,26 +103,23 @@ namespace Presentation.Forms
             cbbLocmon.Items.Add("-- Tất cả --");
             if (User.Role == 0)
             {
-                diems = ToListD(client.GetAllDiemByGV(User.Username));
-                foreach (var lop in ToListP(client.GetLopHP()))
+                diems = client.GetAllDiemByGV(User.Username);
+                foreach (var lop in client.GetLopHP())
                 {
                     if (User.Username == lop.MaGiangVien)
                     {
                         cbbLocmon.Items.Add(lop.MaLopHocPhan + " | " + lop.TenMon + " | " + lop.TenGiangVien); 
-                        break;
                     }
                 }
                 if (cbbLocmon.Items.Count > 1)
                 {
                     cbbLocmon.SelectedIndex = 1;
                 }
-                lblSort.Visible = false;
-                cbbLocmon.Enabled = false;
             }
             else
             {
-                diems = ToListD(client.GetAllDiem());
-                foreach (var item in ToListP(client.GetLopHP()))
+                diems = client.GetAllDiem();
+                foreach (var item in client.GetLopHP())
                 {
                     cbbLocmon.Items.Add(item.MaLopHocPhan + " | " + item.TenMon + " | " + item.TenGiangVien);
                 }
@@ -134,8 +131,8 @@ namespace Presentation.Forms
         {
             lsvDiem.Items.Clear();
             int startInd = (page - 1) * iperPage;
-            int endInd = Math.Min(startInd + iperPage - 1, diems.Count - 1);
-            int totalPages = (int)Math.Ceiling((double)diems.Count / iperPage);
+            int endInd = Math.Min(startInd + iperPage - 1, diems.Length - 1);
+            int totalPages = (int)Math.Ceiling((double)diems.Length / iperPage);
             lblcrPage.Text = crPage.ToString();
             lblTotal.Text = totalPages.ToString();
 
@@ -168,7 +165,7 @@ namespace Presentation.Forms
 
         private void btnNex_Click(object sender, EventArgs e)
         {
-            int totalPages = (int)Math.Ceiling((double)diems.Count / iperPage);
+            int totalPages = (int)Math.Ceiling((double)diems.Length / iperPage);
             if (crPage < totalPages)
             {
                 crPage++;
@@ -176,12 +173,13 @@ namespace Presentation.Forms
             }
         }
 
-        DataTable ConvertListToTable(List<DTDiem> diem)
+        DataTable ConvertListToTable(DTDiem[] diem)
         {
             DataTable dataTable = new DataTable
             {
                 TableName = "bangDiem"
             };
+
             if (diem != null)
             {
                 dataTable.Columns.Add("maLHP", typeof(string));
@@ -252,7 +250,8 @@ namespace Presentation.Forms
 
         private void cbbLocmon_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (User.Role == 1)
+            diems = null;
+            if (true)
             {
                 if (cbbLocmon.SelectedIndex > 0)
                 {
@@ -266,12 +265,12 @@ namespace Presentation.Forms
                             break;
                         }
                     }
-                    diems = ToListD(client.GetAllDiemByGV(maGV));
+                    diems = client.GetAllDiemByGV(maGV);
                     DisplayPage(crPage);
                 }
                 else
                 {
-                    diems = ToListD(client.GetAllDiem());
+                    diems = client.GetAllDiem();
                     DisplayPage(crPage);
                 }
             }
