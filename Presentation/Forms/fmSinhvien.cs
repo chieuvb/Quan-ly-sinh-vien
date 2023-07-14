@@ -150,28 +150,6 @@ namespace Presentation.Forms
             lblcrPage.Text = crPage.ToString();
             lblTotal.Text = totalPages.ToString();
 
-            /*ImageList large = new ImageList
-            {
-                ImageSize = new Size(103, 140)
-            };
-
-            for (int i = 0; i < sinhViens.Length; i++)
-            {
-                if (sinhViens[i].AnhDaiDien != null)
-                {
-                    using (MemoryStream ms = new MemoryStream(sinhViens[i].AnhDaiDien))
-                    {
-                        large.Images.Add(Image.FromStream(ms));
-                    }
-                }
-                else
-                {
-                    large.Images.Add(Properties.Resources.holder);
-                }
-            }
-
-            lsvSinhvien.LargeImageList = large;*/
-
             for (int i = staInd; i <= endInd; i++)
             {
                 DTSinhvien sin = sinhViens[i];
@@ -210,24 +188,6 @@ namespace Presentation.Forms
             }
         }
 
-        //original
-        /*private void cbbLopHC_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            crPage = 1;
-            if (cbbLopHC.SelectedIndex > 0)
-            {
-                string lop = cbbLopHC.Text.Split('|').First().Trim();
-                sinhViens = client.SortSinhVien(lop, null, null);
-            }
-            else if (cbbLopHC.SelectedIndex == 0)
-                sinhViens = client.GetAllSinhVien();
-
-            DisplayPage(crPage);
-            cbbDiachi.SelectedIndex = 0;
-            cbbGend.SelectedIndex = 0;
-        }*/
-
-        //bing chat
         private void cbbLopHC_SelectedIndexChanged(object sender, EventArgs e)
         {
             crPage = 1;
@@ -243,39 +203,6 @@ namespace Presentation.Forms
             cbbGend.SelectedIndex = 0;
         }
 
-        //original
-        /*private void cbbDiachi_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            crPage = 1;
-            string lop = cbbLopHC.Text.Split('|').First().Trim();
-            string dia = cbbDiachi.Text.Trim();
-            if (cbbLopHC.SelectedIndex > 0)
-            {
-                if (cbbDiachi.SelectedIndex > 0)
-                {
-                    sinhViens = client.SortSinhVien(lop, dia, null);
-                }
-                else if (cbbDiachi.SelectedIndex == 0)
-                {
-                    sinhViens = client.SortSinhVien(lop, null, null);
-                }
-            }
-            else if (cbbLopHC.SelectedIndex == 0)
-            {
-                if (cbbDiachi.SelectedIndex > 0)
-                {
-                    sinhViens = client.SortSinhVien(null, dia, null);
-                }
-                else if (cbbDiachi.SelectedIndex == 0)
-                {
-                    sinhViens = client.GetAllSinhVien();
-                }
-            }
-            DisplayPage(crPage);
-            cbbGend.SelectedIndex = 0;
-        }*/
-
-        //bing chat
         private void cbbDiachi_SelectedIndexChanged(object sender, EventArgs e)
         {
             crPage = 1;
@@ -291,91 +218,6 @@ namespace Presentation.Forms
             cbbGend.SelectedIndex = 0;
         }
 
-        //original
-        /*private void cbbGend_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            crPage = 1;
-            string lop = cbbLopHC.Text.Split('|').First().Trim();
-            string dia = cbbDiachi.Text.Trim();
-            string gio;
-            if (cbbLopHC.SelectedIndex > 0)
-            {
-                if (cbbDiachi.SelectedIndex > 0)
-                {
-                    switch (cbbGend.SelectedIndex)
-                    {
-                        case 0:
-                            sinhViens = client.SortSinhVien(lop, dia, null);
-                            break;
-                        case 1:
-                            gio = "1";
-                            sinhViens = client.SortSinhVien(lop, dia, gio);
-                            break;
-                        case 2:
-                            gio = "0";
-                            sinhViens = client.SortSinhVien(lop, dia, gio);
-                            break;
-                    }
-                }
-                else if (cbbDiachi.SelectedIndex == 0)
-                {
-                    switch (cbbGend.SelectedIndex)
-                    {
-                        case 0:
-                            sinhViens = client.SortSinhVien(lop, null, null);
-                            break;
-                        case 1:
-                            gio = "1";
-                            sinhViens = client.SortSinhVien(lop, null, gio);
-                            break;
-                        case 2:
-                            gio = "0";
-                            sinhViens = client.SortSinhVien(lop, null, gio);
-                            break;
-                    }
-                }
-            }
-            else if (cbbLopHC.SelectedIndex == 0)
-            {
-                if (cbbDiachi.SelectedIndex > 0)
-                {
-                    switch (cbbGend.SelectedIndex)
-                    {
-                        case 0:
-                            sinhViens = client.SortSinhVien(null, dia, null);
-                            break;
-                        case 1:
-                            gio = "1";
-                            sinhViens = client.SortSinhVien(null, dia, gio);
-                            break;
-                        case 2:
-                            gio = "0";
-                            sinhViens = client.SortSinhVien(null, dia, gio);
-                            break;
-                    }
-                }
-                else if (cbbDiachi.SelectedIndex == 0)
-                {
-                    switch (cbbGend.SelectedIndex)
-                    {
-                        case 0:
-                            sinhViens = client.GetAllSinhVien();
-                            break;
-                        case 1:
-                            gio = "1";
-                            sinhViens = client.SortSinhVien(null, null, gio);
-                            break;
-                        case 2:
-                            gio = "0";
-                            sinhViens = client.SortSinhVien(null, null, gio);
-                            break;
-                    }
-                }
-            }
-            DisplayPage(crPage);
-        }*/
-
-        //bing chat
         private void cbbGend_SelectedIndexChanged(object sender, EventArgs e)
         {
             crPage = 1;
