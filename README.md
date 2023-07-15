@@ -12,6 +12,7 @@ Xử lý logic:
 
 Database:
   * Microsoft SQL Server
+  * Mật khẩu: 1
 
 Bộ tạo báo cáo:
   * Crystal Reports
